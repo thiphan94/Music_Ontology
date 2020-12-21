@@ -1,0 +1,739 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/Paris_transport_ontologie"
+     xml:base="http://www.semanticweb.org/Paris_transport_ontologie"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Paris_transport_ontologie="http://www.semanticweb.org/Paris_transport_ontologie#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/Paris_transport_ontologie"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#UtiliseCeTransport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#UtiliseCeTransport">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#estUtilisePar"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourArret -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourArret">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#aPourTransports"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourArrive -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourArrive">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#estArriveDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourDepart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourDepart">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#estDepartDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourTransports -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourTransports">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#estArriveDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#estArriveDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#estDepartDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#estDepartDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#estUtilisePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#estUtilisePar">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Heure_Arrive_Uber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Heure_Arrive_Uber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Uber"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Heure_Depart_Uber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Heure_Depart_Uber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Uber"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Aeroports -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Aeroports">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Arrets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Arrets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Autres -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Autres">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Bus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Bus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#RATP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Gares -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Gares">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Lieux -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Lieux">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#aPourTransports"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Lieux_touristiques -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Lieux_touristiques">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Lime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Lime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinettes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Locations -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Locations">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Marche_a_pied -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Marche_a_pied">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Metro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Metro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#RATP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#RATP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#RATP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#RER -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#RER">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#RATP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Services -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Services">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Stations_Velib -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Stations_Velib">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Taxi_VTC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Taxi_VTC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Services"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Transports -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Transports">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#aPourArret"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#estUtilisePar"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Trotinettes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Trotinettes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Locations"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Uber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Uber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Services"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Usagers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Usagers">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#UtiliseCeTransport"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Transports"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#aPourArrive"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#aPourDepart"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Velib -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Velib">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Locations"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Alexis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Alexis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Uber_Alexis"/>
+        <Paris_transport_ontologie:aPourArrive rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Tour_Eiffel"/>
+        <Paris_transport_ontologie:aPourDepart rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Charles_De_Gaulle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Bus_46 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Bus_46">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Bus"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Marie"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Louis_Blanc"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Cadet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Cadet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Arrets"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Camille"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Jean"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_5"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Camille -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Camille">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Camille"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_5"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_7"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Camille"/>
+        <Paris_transport_ontologie:aPourArrive rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Louvre"/>
+        <Paris_transport_ontologie:aPourDepart rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Travail_de_Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Charles_De_Gaulle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Charles_De_Gaulle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Aeroports"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Uber_Alexis"/>
+        <Paris_transport_ontologie:estDepartDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Alexis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Chatelet_les_Halles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Chatelet_les_Halles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Arrets"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_5"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#RER_B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Jean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Jean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Autres"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Jean"/>
+        <Paris_transport_ontologie:estDepartDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Jean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Marie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Marie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Autres"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Marie"/>
+        <Paris_transport_ontologie:estDepartDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Gare_de_l_est -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Gare_de_l_est">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Gares"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Taxis_Olaf"/>
+        <Paris_transport_ontologie:estDepartDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Olaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Jean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Jean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Jean"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_5"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_7"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Jean"/>
+        <Paris_transport_ontologie:aPourArrive rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Louvre"/>
+        <Paris_transport_ontologie:aPourDepart rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Jean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#La_Defense -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#La_Defense">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Autres"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Olaf"/>
+        <Paris_transport_ontologie:estArriveDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Olaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Louis_Blanc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Louis_Blanc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Arrets"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Bus_46"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#RER_B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Louvre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Louvre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux_touristiques"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Camille"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Jean"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_7"/>
+        <Paris_transport_ontologie:estArriveDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Camille"/>
+        <Paris_transport_ontologie:estArriveDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Jean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Marche_Camille -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Camille">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_a_pied"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Cadet"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Louvre"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Camille"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Marche_Jean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Jean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_a_pied"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Cadet"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Louvre"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Jean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Marche_Marie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Marie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_a_pied"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Marie"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Parc_Floral"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Marche_Olaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Olaf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_a_pied"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#La_Defense"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_La_Defense"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Olaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Marie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Marie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Bus_46"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Marie"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_5"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#RER_B"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Marie"/>
+        <Paris_transport_ontologie:aPourArrive rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Travail_de_Marie"/>
+        <Paris_transport_ontologie:aPourDepart rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Metro_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Metro_5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Cadet"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Chatelet_les_Halles"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Republique"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Metro_7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Metro_7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Cadet"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Louvre"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Jean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Olaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Olaf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Usagers"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Olaf"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Taxis_Olaf"/>
+        <Paris_transport_ontologie:UtiliseCeTransport rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Velib_Olaf"/>
+        <Paris_transport_ontologie:aPourArrive rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#La_Defense"/>
+        <Paris_transport_ontologie:aPourDepart rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Gare_de_l_est"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Parc_Floral -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Parc_Floral">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Arrets"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Bus_46"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#RER_B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#RER_B">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#RER"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Chatelet_les_Halles"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Louis_Blanc"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Republique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Republique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Arrets"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Metro_5"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Camille"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Jean"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_La_Defense -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_La_Defense">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Stations_Velib"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marche_Olaf"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Velib_Olaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_Porte_Maillot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_Porte_Maillot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Stations_Velib"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Taxis_Olaf"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Velib_Olaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Taxis_Olaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Taxis_Olaf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Taxi_VTC"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Gare_de_l_est"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_Porte_Maillot"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Olaf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Tour_Eiffel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Tour_Eiffel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lieux_touristiques"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Uber_Alexis"/>
+        <Paris_transport_ontologie:estArriveDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Alexis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Travail_de_Marie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Travail_de_Marie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Autres"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Camille"/>
+        <Paris_transport_ontologie:aPourTransports rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Marie"/>
+        <Paris_transport_ontologie:estArriveDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marie"/>
+        <Paris_transport_ontologie:estDepartDe rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Camille"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Camille -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Camille">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Jean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Jean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lime"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Domicile_de_Jean"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Republique"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Jean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Marie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Trotinette_Lime_Marie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Lime"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Republique"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Travail_de_Marie"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Marie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Uber_Alexis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Uber_Alexis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Uber"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Charles_De_Gaulle"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Tour_Eiffel"/>
+        <Paris_transport_ontologie:estUtilisePar rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Alexis"/>
+        <Paris_transport_ontologie:Heure_Arrive_Uber>12:45</Paris_transport_ontologie:Heure_Arrive_Uber>
+        <Paris_transport_ontologie:Heure_Depart_Uber>12:00</Paris_transport_ontologie:Heure_Depart_Uber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Paris_transport_ontologie#Velib_Olaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#Velib_Olaf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Velib"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_La_Defense"/>
+        <Paris_transport_ontologie:aPourArret rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Station_Velib_Porte_Maillot"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
