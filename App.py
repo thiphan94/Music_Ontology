@@ -8,18 +8,20 @@ transport_graph.parse("Projet_transport_rdf_xlm.owl")
 
 #uber_graph= Graph()
 #uber_graph.parse("Uber_Paris.owl")
-nb_day=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+quarter=['Q1', 'Q2', 'Q3', 'Q4']
+year=['2017', '2018', '2019', '2020']
 import PySimpleGUI as sg
 #sg.theme('Reddit')   # Add a touch of color
 
 col = [[sg.Frame(layout=[[sg.Multiline("Welcome to the prototype of this application that will :\n   - Show all transports available\n   - Search for users journey\n   - Search for information on dbpedia\nThis app uses a personalised ontology representing some of the Transports available in Paris.",key='-TEXT-',size=(500,30))]],
         title='Informations:')]]
 
-#[sg.Button("Uber statistics for"),sg.Listbox((nb_day), size=(20,4), enable_events=True, key='_LIST_')]
+
 layout = [
     [sg.Frame(layout=[[sg.Button("Show all Transport",size=(31,1))],
     [sg.Button("Search Users"),sg.Text('',key='-Search-0'), sg.InputText(size=(19,1))],
-    [sg.Button("Search Information"),sg.Text('',key='-Search-1'), sg.InputText(size=(15,1))]
+    [sg.Button("Search Information"),sg.Text('',key='-Search-1'), sg.InputText(size=(15,1))],
+    [sg.Button("Uber statistics for"), sg.Listbox((quarter), size=(20, 4), enable_events=True, key='_LIST_'), sg.Listbox((year), size=(20, 4), enable_events=True, key='_LIST1_')]
     ], title='Interface:'), sg.Column(col)],
 ]
 # Create the window
@@ -178,7 +180,7 @@ while True:
                }
                }""")
 
-        print(len(trajet))  # TODO Do not remove, otherwise, it will not show all the results ? BUG
+        print(len(trajet))  # TODO Do not remove, otherwise, it will not show all the results
         if len(trajet)==0:
             to_print.append("User not found")
 
@@ -215,16 +217,35 @@ while True:
 
         to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
-    """
+
     if event =="Uber statistics for":
-        day=values.get('_LIST_')
-        day=str(day[0])
+        quart=values.get('_LIST_')
+        quart=str(quart[0])
+        ye = values.get('_LIST1_')
+        ye = str(ye[0])
+        date_print=quart+' '+ye
         #convert to int
-        day_int={'Monday':1,'Tuesday':2,'Wednesday':3,'Thursday':4,'Friday':5,'Saturday':6,'Sunday':7}
-        for i,j in day_int.items():
-            if i==day:
-                day=j
-    """
+        ye_transf={'2017':"'17",'2018':"'18",'2019':"'19",'2020':"'20"}
+        for i,j in ye_transf.items():
+            if i==ye:
+                ye=j
+        search_uber=quart+ye
+        dict_data_uber={"Q3'20":78,"Q2'20":55,"Q1'20":103,
+                        "Q4'19":111,"Q3'19":103,"Q2'19":99,"Q1'19":93,
+                        "Q4'18": 91, "Q3'18": 82, "Q2'18": 76, "Q1'18": 70,
+                        "Q4'17": 68, "Q3'17": 62, "Q2'17": 57, "Q1'17": 49}
+        #Source : https://www.statista.com/statistics/833743/us-users-ride-sharing-services/
+        to_print_uber=[]
+        to_print_uber.append('Uber had')
+        for key, value in dict_data_uber.items():
+            if key == search_uber:
+                to_print_uber.append(str(value)+'M Users')
+        to_print_uber.append('in '+date_print)
+        if search_uber == "Q4'20":
+            to_print_uber=['No Data']
+        to_print_uber = " ".join(to_print_uber)
+        window['-TEXT-'].update(to_print_uber)
+
     if event == sg.WIN_CLOSED:
         break
 window.close()
