@@ -5,7 +5,7 @@ from rdflib import Graph, URIRef
 from rdflib.tools import csv2rdf
 
 music_graph = Graph()
-music_graph.parse("Projet_transport_rdf_xlm.owl")
+music_graph.parse("Projet_music_rdf_xlm.owl")
 
 #uber_graph= Graph()
 #uber_graph.parse("Uber_Paris.owl")
@@ -55,7 +55,7 @@ while True:
         instrument_ = ''.join(instrument_list)
         # query for user's name and return transports, depart, arrivee
         trajet = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
                PREFIX owl: <http://www.w3.org/2002/07/owl#> 
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
                PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
@@ -88,10 +88,10 @@ while True:
                 to_print.append('    -')
             for s in range(len(tra)):
                 s_ = str(tra[s]).split('#')
-                if 'http://www.semanticweb.org/Paris_transport_ontologie' in s_:
-                    s_.remove('http://www.semanticweb.org/Paris_transport_ontologie')
+                if 'http://www.semanticweb.org/music_ontologie' in s_:
+                    s_.remove('http://www.semanticweb.org/music_ontologie')
                 if not s_:
-                    sub = 'Paris_transport_ontologie'
+                    sub = 'music_ontologie'
                 else:
                     sub = s_[0]
                 print(sub)  # print the element only
@@ -109,7 +109,7 @@ while True:
     if event == "Show all persons" :
         # If new type of transport, add one Union with bas:NewTransport
         all_transports = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
                PREFIX owl: <http://www.w3.org/2002/07/owl#> 
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
                PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
@@ -139,10 +139,10 @@ while True:
         for transport in all_transports:
             for s in range(len(transport)):
                 s_ = str(transport[s]).split('#')
-                if 'http://www.semanticweb.org/Paris_transport_ontologie' in s_:
-                    s_.remove('http://www.semanticweb.org/Paris_transport_ontologie')
+                if 'http://www.semanticweb.org/music_ontologie' in s_:
+                    s_.remove('http://www.semanticweb.org/music_ontologie')
                 if not s_:
-                    sub = 'Paris_transport_ontologie'
+                    sub = 'music_ontologie'
                 else:
                     sub = s_[0]
                 #print(sub)  # print the element only
@@ -170,7 +170,7 @@ while True:
         genre_ = ''.join(genre_list)
         # query for user's name and return transports, depart, arrivee
         trajet = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
                PREFIX owl: <http://www.w3.org/2002/07/owl#> 
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
                PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
@@ -200,10 +200,10 @@ while True:
                 to_print.append('    -')
             for s in range(len(tra)):
                 s_ = str(tra[s]).split('#')
-                if 'http://www.semanticweb.org/Paris_transport_ontologie' in s_:
-                    s_.remove('http://www.semanticweb.org/Paris_transport_ontologie')
+                if 'http://www.semanticweb.org/music_ontologie' in s_:
+                    s_.remove('http://www.semanticweb.org/music_ontologie')
                 if not s_:
-                    sub = 'Paris_transport_ontologie'
+                    sub = 'music_ontologie'
                 else:
                     sub = s_[0]
                 print(sub)  # print the element only
@@ -236,7 +236,7 @@ while True:
         genre_ = ''.join(genre_list)
         # query for user's name and return transports, depart, arrivee
         trajet = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
                PREFIX owl: <http://www.w3.org/2002/07/owl#> 
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
                PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
@@ -266,10 +266,10 @@ while True:
                 to_print.append('    -')
             for s in range(len(tra)):
                 s_ = str(tra[s]).split('#')
-                if 'http://www.semanticweb.org/Paris_transport_ontologie' in s_:
-                    s_.remove('http://www.semanticweb.org/Paris_transport_ontologie')
+                if 'http://www.semanticweb.org/music_ontologie' in s_:
+                    s_.remove('http://www.semanticweb.org/music_ontologie')
                 if not s_:
-                    sub = 'Paris_transport_ontologie'
+                    sub = 'music_ontologie'
                 else:
                     sub = s_[0]
                 print(sub)  # print the element only
