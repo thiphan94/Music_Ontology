@@ -12,23 +12,24 @@ music_graph.parse("Projet_music_rdf_xlm.owl")
 quarter=['Q1', 'Q2', 'Q3', 'Q4']
 year=['2017', '2018', '2019', '2020']
 import PySimpleGUI as sg
-#sg.theme('Reddit')   # Add a touch of color
 
-col = [[sg.Frame(layout=[[sg.Multiline("Welcome to the prototype of this application that will :\n   - Show all transports available\n   - Search for users journey\n   - Search for information on dbpedia\nThis app uses a personalised ontology representing some of the Transports available in Paris.",key='-TEXT-',size=(500,30))]],
+
+sg.theme('DarkGrey1')   # Add a touch of color
+
+col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine to music ontology :\n   - Show all artistes available\n   - Search informations with query.",key='-TEXT-',size=(500,30),font=("Helvetica", 15), text_color='blue',)]],
         title='Informations:')]]
 
 
 layout = [
     [sg.Frame(layout=[[sg.Button("Show all persons",size=(31,1))],
     [sg.Button("Genre"),sg.Text('',key='-Search-0'), sg.InputText(size=(19,1))],
-    [sg.Button("Instrument"),sg.Text('',key='-Search-1'), sg.InputText(size=(15,1))],
-    [sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin'], enable_events=True, key='combo',size=(20, 3))],
+    [sg.Button("Instrument"),sg.Text('',key='-Search-1'), sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin'], enable_events=True, key='combo',size=(20, 3))],
     [sg.Button("Name"),sg.Text('',key='-Search-3'), sg.InputText(size=(19,1))],
     [sg.Button("Uber statistics for"), sg.Listbox((quarter), size=(20, 4), enable_events=True, key='_LIST_'), sg.Listbox((year), size=(20, 4), enable_events=True, key='_LIST1_')]
     ], title='Interface:'), sg.Column(col)],
 ]
 # Create the window
-window = sg.Window("Demo", layout,size=(1080,550),return_keyboard_events=True)
+window = sg.Window("Music Ontology", layout,size=(1080,550),return_keyboard_events=True)
 
 # Create an event loop
 while True:
@@ -118,23 +119,27 @@ while True:
 
         print(len(trajet))  # TODO Do not remove, otherwise, it will not show all the results
         if len(trajet)==0:
-            to_print.append("User not found")
+            to_print.append("Not found!")
 
-        # "Clean" the results to print only transport's name
-        counter = 0
+        # Print results
+        #counter = 0
+        strx="Person use " + str(instrument_) +": "
+        to_print.append(strx)
+        to_print.append("&")
         for tra in trajet:
-            if counter == 0:
-                print("Departure : ", end='')
-                to_print.append("Departure : ")
-            elif counter == 1:
-                print("Transports : \n    -", end='')
-                to_print.append("Transports : \n    -")
-            elif 1 == len(trajet) - counter:
-                print("Arriving : ", end='')
-                to_print.append("Arriving : ")
-            else:
-                print('    -', end='')
-                to_print.append('    -')
+            #to_print.append("Person:")
+        #     if counter == 0:
+        #         print("Person use",instrument_, end='')
+        #         to_print.append("Person:")
+        #     elif counter == 1:
+        #         print("Transports : \n    -", end='')
+        #         to_print.append("Transports : \n    -")
+        #     elif 1 == len(trajet) - counter:
+        #         print("Arriving : ", end='')
+        #         to_print.append("Arriving : ")
+        #     else:
+        #         print('    -', end='')
+        #         to_print.append('    -')
             for s in range(len(tra)):
                 s_ = str(tra[s]).split('#')
                 if 'http://www.semanticweb.org/music_ontologie' in s_:
@@ -146,7 +151,7 @@ while True:
                 print(sub)  # print the element only
                 to_print.append(sub)
                 to_print.append("&")
-            counter += 1
+        #     counter += 1
         for idx,itm in enumerate(to_print):
             if itm =="&":
                 to_print[idx]="\n"
