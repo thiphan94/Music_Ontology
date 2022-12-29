@@ -4,8 +4,8 @@ import rdflib
 from rdflib import Graph, URIRef
 from rdflib.tools import csv2rdf
 
-transport_graph = Graph()
-transport_graph.parse("Projet_transport_rdf_xlm.owl")
+music_graph = Graph()
+music_graph.parse("Projet_transport_rdf_xlm.owl")
 
 #uber_graph= Graph()
 #uber_graph.parse("Uber_Paris.owl")
@@ -21,7 +21,8 @@ col = [[sg.Frame(layout=[[sg.Multiline("Welcome to the prototype of this applica
 layout = [
     [sg.Frame(layout=[[sg.Button("Show all persons",size=(31,1))],
     [sg.Button("Genre"),sg.Text('',key='-Search-0'), sg.InputText(size=(19,1))],
-    [sg.Button("Search Information"),sg.Text('',key='-Search-1'), sg.InputText(size=(15,1))],
+    [sg.Button("Instrument"),sg.Text('',key='-Search-1'), sg.InputText(size=(15,1))],
+    [sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin'], size=(20, 3))],
     [sg.Button("Name"),sg.Text('',key='-Search-2'), sg.InputText(size=(19,1))],
     [sg.Button("Uber statistics for"), sg.Listbox((quarter), size=(20, 4), enable_events=True, key='_LIST_'), sg.Listbox((year), size=(20, 4), enable_events=True, key='_LIST1_')]
     ], title='Interface:'), sg.Column(col)],
@@ -34,72 +35,80 @@ while True:
     event, values = window.read()
     for i,j in values.items():
         print(i,j)
-    if event == "Search Information":
+
+    #Search person by instrument    
+    if event == "Instrument":
         event, values = window.read()
         to_print=[]
-        print(values.get(1))
-        # Initialize a graph
-        search_info_graph = Graph()
-        # Parse in an RDF file graph dbpedia
-        # Ask for input, and clean the input to search for it
-        query=values.get(1)
-        if len(query) == 0:
-            query = 'Eiffel Tower'
+        print(values.get(0))
+        instrument=values.get(0)
+        if len(instrument) == 0:
+            instrument = 'Marie'
         # Cleaning
-        query_ = query.replace(" ", "_")
-        query_list = []
-        query_list[:0] = query_
-        if query_list[0] == '_':
-            del query_list[0]
-        if query_list[-1] == '_':
-            del query_list[-1]
-        query_ = ''.join(query_list)
+        instrument_ = instrument.replace(" ", "_")
+        instrument_list = []
+        instrument_list[:0] = instrument_
+        if instrument_list[0] == '_':
+            del instrument_list[0]
+        if instrument_list[-1] == '_':
+            del instrument_list[-1]
+        instrument_ = ''.join(instrument_list)
+        # query for user's name and return transports, depart, arrivee
+        trajet = music_graph.query(""" 
+               PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
+               PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+               PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
+               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
-        # Search
-        base = "http://dbpedia.org/resource/"
-        search = base + query_
-        print("Searching for ", query, " at ", search)
-        to_print.append("Searching for "+ query+ " at "+search)
-        search_info_graph.parse(search)
-        if len(search_info_graph.serialize(format='n3').decode('utf-8')) == 0 or len(
-                search_info_graph.serialize(format='n3').decode('utf-8')) == 1:
-            print('Page not found')
-            to_print.append('Page not found')
-        # TODO Maybe search more info and add a way to print the predicate, ie openingDate : 1793 for Louvre query
-        results = search_info_graph.query("""
-               PREFIX dbo: <http://dbpedia.org/ontology/> 
-               PREFIX s: <""" + search + """> 
-               PREFIX dbp: <http://dbpedia.org/property/>
-               SELECT ?abstract ?established ?openingDate
-               WHERE {
-                  ?s dbo:abstract ?abstract .
-                  OPTIONAL {?s dbp:established ?established .}
-                  OPTIONAL {?s dbo:openingDate ?openingDate .}
-                  FILTER (lang(?abstract) = 'en')
-               }""")
-        if len(results) == 0 and len(to_print)==1:
-            print("Nothing valuable has been found")
-            to_print.append("Nothing valuable has been found")
-        for element in results:
-            for i in range(len(element)):
-                if element[i] == None:
-                    continue
-                elif i == 0:
-                    print('ABSTRACT : ',element[i])
-                    to_print.append('ABSTRACT : '+element[i])
-                elif i == 1 or i == 2:
-                    print("Opening/Established in : ",element[i])
-                    to_print.append("Opening/Established in : "+element[i])
+               SELECT ?bas
+               WHERE {{
+               ?bas bas:primaryinstrument bas:Guitar .
+               }}""")
+
+        print(len(trajet))  # TODO Do not remove, otherwise, it will not show all the results
+        if len(trajet)==0:
+            to_print.append("User not found")
+
+        # "Clean" the results to print only transport's name
+        counter = 0
+        for tra in trajet:
+            if counter == 0:
+                print("Departure : ", end='')
+                to_print.append("Departure : ")
+            elif counter == 1:
+                print("Transports : \n    -", end='')
+                to_print.append("Transports : \n    -")
+            elif 1 == len(trajet) - counter:
+                print("Arriving : ", end='')
+                to_print.append("Arriving : ")
+            else:
+                print('    -', end='')
+                to_print.append('    -')
+            for s in range(len(tra)):
+                s_ = str(tra[s]).split('#')
+                if 'http://www.semanticweb.org/Paris_transport_ontologie' in s_:
+                    s_.remove('http://www.semanticweb.org/Paris_transport_ontologie')
+                if not s_:
+                    sub = 'Paris_transport_ontologie'
                 else:
-                    print(element[i])  # print the element only
-                    to_print.append(element[i])
-        to_print = "\n".join(to_print)
+                    sub = s_[0]
+                print(sub)  # print the element only
+                to_print.append(sub)
+                to_print.append("&")
+            counter += 1
+        for idx,itm in enumerate(to_print):
+            if itm =="&":
+                to_print[idx]="\n"
+
+        to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
 
 
     if event == "Show all persons" :
         # If new type of transport, add one Union with bas:NewTransport
-        all_transports = transport_graph.query(""" 
+        all_transports = music_graph.query(""" 
                PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
                PREFIX owl: <http://www.w3.org/2002/07/owl#> 
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
@@ -160,7 +169,7 @@ while True:
             del genre_list[-1]
         genre_ = ''.join(genre_list)
         # query for user's name and return transports, depart, arrivee
-        trajet = transport_graph.query(""" 
+        trajet = music_graph.query(""" 
                PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
                PREFIX owl: <http://www.w3.org/2002/07/owl#> 
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
@@ -207,6 +216,8 @@ while True:
 
         to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
+
+        #Search person by genre
     if event == "Genre":
         event, values = window.read()
         to_print=[]
@@ -224,7 +235,7 @@ while True:
             del genre_list[-1]
         genre_ = ''.join(genre_list)
         # query for user's name and return transports, depart, arrivee
-        trajet = transport_graph.query(""" 
+        trajet = music_graph.query(""" 
                PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
                PREFIX owl: <http://www.w3.org/2002/07/owl#> 
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 

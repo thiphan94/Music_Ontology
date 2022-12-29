@@ -14,10 +14,16 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="Paris_transport_ontologie" IRI="http://www.semanticweb.org/Paris_transport_ontologie#"/>
     <Declaration>
+        <Class IRI="#Album"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Artiste"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Certification"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Composer"/>
@@ -38,22 +44,31 @@
         <Class IRI="#Musician"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Rating"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Singer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Song"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#musicgroup"/>
+        <ObjectProperty IRI="#beAlbumof"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#beGenre"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#beSongof"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAlbum"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCertification"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasGenre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSong"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#memberof"/>
@@ -71,7 +86,25 @@
         <DataProperty IRI="#year"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Abbey_Road"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Back_In_The_Ussr"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Charlie_Puth"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Classic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Come_Together"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dear_Prudence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Diamond"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Drums"/>
@@ -80,16 +113,28 @@
         <NamedIndividual IRI="#George_Harrison"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Gold"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Guitar"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Hiphop"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#John_Lennon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kid_Cudi"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Louis_Armstrong"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Make_Her_Say"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Otis_Blackwell"/>
@@ -101,6 +146,9 @@
         <NamedIndividual IRI="#Piano"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Platinum"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Pop"/>
     </Declaration>
     <Declaration>
@@ -108,6 +156,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Rock"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sky_Might_Fall"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#The_Beatles"/>
@@ -119,7 +170,16 @@
         <NamedIndividual IRI="#Vocals"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#White_Album"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Whitney_Houston"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Maxwell&apos;s_Silver_Hammer"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Author"/>
@@ -133,97 +193,149 @@
         <Class IRI="#Interpreter"/>
         <Class IRI="#Artiste"/>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#musicgroup"/>
+    <DisjointClasses>
+        <Class IRI="#Author"/>
+        <Class IRI="#Composer"/>
+        <Class IRI="#Interpreter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Musician"/>
+        <Class IRI="#Singer"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Album"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Song"/>
+        <NamedIndividual IRI="#Back_In_The_Ussr"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Composer"/>
+        <NamedIndividual IRI="#Charlie_Puth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Singer"/>
+        <NamedIndividual IRI="#Charlie_Puth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Classic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Song"/>
+        <NamedIndividual IRI="#Come_Together"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Song"/>
+        <NamedIndividual IRI="#Dear_Prudence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Certification"/>
+        <NamedIndividual IRI="#Diamond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instrument"/>
+        <NamedIndividual IRI="#Drums"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Composer"/>
+        <NamedIndividual IRI="#George_Harrison"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Musician"/>
+        <NamedIndividual IRI="#George_Harrison"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Singer"/>
+        <NamedIndividual IRI="#George_Harrison"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Certification"/>
+        <NamedIndividual IRI="#Gold"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instrument"/>
+        <NamedIndividual IRI="#Guitar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Hiphop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Author"/>
+        <NamedIndividual IRI="#John_Lennon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Composer"/>
+        <NamedIndividual IRI="#John_Lennon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Musician"/>
+        <NamedIndividual IRI="#John_Lennon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Singer"/>
+        <NamedIndividual IRI="#John_Lennon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Composer"/>
+        <NamedIndividual IRI="#Kid_Cudi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Singer"/>
+        <NamedIndividual IRI="#Kid_Cudi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Musician"/>
+        <NamedIndividual IRI="#Louis_Armstrong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Composer"/>
+        <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Song"/>
+        <NamedIndividual IRI="#Make_Her_Say"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Author"/>
+        <NamedIndividual IRI="#Otis_Blackwell"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Composer"/>
+        <NamedIndividual IRI="#Paul_McCartney"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Musician"/>
+        <NamedIndividual IRI="#Paul_McCartney"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Singer"/>
+        <NamedIndividual IRI="#Paul_McCartney"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instrument"/>
+        <NamedIndividual IRI="#Piano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Certification"/>
+        <NamedIndividual IRI="#Platinum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Pop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Rock"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Song"/>
+        <NamedIndividual IRI="#Sky_Might_Fall"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Group"/>
-    </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Author"/>
-        <Class IRI="#Composer"/>
-        <Class IRI="#Interpreter"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Musician"/>
-        <Class IRI="#Singer"/>
-    </DisjointClasses>
-    <ClassAssertion>
-        <Class IRI="#Genre"/>
-        <NamedIndividual IRI="#Classic"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Instrument"/>
-        <NamedIndividual IRI="#Drums"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Composer"/>
-        <NamedIndividual IRI="#George_Harrison"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Musician"/>
-        <NamedIndividual IRI="#George_Harrison"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Singer"/>
-        <NamedIndividual IRI="#George_Harrison"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Instrument"/>
-        <NamedIndividual IRI="#Guitar"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Author"/>
-        <NamedIndividual IRI="#John_Lennon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Composer"/>
-        <NamedIndividual IRI="#John_Lennon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Musician"/>
-        <NamedIndividual IRI="#John_Lennon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Singer"/>
-        <NamedIndividual IRI="#John_Lennon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Musician"/>
-        <NamedIndividual IRI="#Louis_Armstrong"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Composer"/>
-        <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Author"/>
-        <NamedIndividual IRI="#Otis_Blackwell"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Composer"/>
-        <NamedIndividual IRI="#Paul_McCartney"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Musician"/>
-        <NamedIndividual IRI="#Paul_McCartney"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Singer"/>
-        <NamedIndividual IRI="#Paul_McCartney"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Instrument"/>
-        <NamedIndividual IRI="#Piano"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Genre"/>
-        <NamedIndividual IRI="#Pop"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Genre"/>
-        <NamedIndividual IRI="#Rock"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#musicgroup"/>
         <NamedIndividual IRI="#The_Beatles"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -235,9 +347,46 @@
         <NamedIndividual IRI="#Vocals"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Album"/>
+        <NamedIndividual IRI="#White_Album"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Singer"/>
         <NamedIndividual IRI="#Whitney_Houston"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Album"/>
+        <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Song"/>
+        <NamedIndividual IRI="#Maxwell&apos;s_Silver_Hammer"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#beAlbumof"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
+        <NamedIndividual IRI="#The_Beatles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCertification"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
+        <NamedIndividual IRI="#Platinum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#beSongof"/>
+        <NamedIndividual IRI="#Back_In_The_Ussr"/>
+        <NamedIndividual IRI="#White_Album"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#beSongof"/>
+        <NamedIndividual IRI="#Come_Together"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#beSongof"/>
+        <NamedIndividual IRI="#Dear_Prudence"/>
+        <NamedIndividual IRI="#White_Album"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasGenre"/>
         <NamedIndividual IRI="#George_Harrison"/>
@@ -267,6 +416,16 @@
         <ObjectProperty IRI="#primaryinstrument"/>
         <NamedIndividual IRI="#John_Lennon"/>
         <NamedIndividual IRI="#Guitar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#Kid_Cudi"/>
+        <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#Kid_Cudi"/>
+        <NamedIndividual IRI="#Hiphop"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasGenre"/>
@@ -309,6 +468,11 @@
         <NamedIndividual IRI="#Drums"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#The_Beatles"/>
+        <NamedIndividual IRI="#White_Album"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasGenre"/>
         <NamedIndividual IRI="#The_Beatles"/>
         <NamedIndividual IRI="#Pop"/>
@@ -317,6 +481,31 @@
         <ObjectProperty IRI="#hasGenre"/>
         <NamedIndividual IRI="#The_Beatles"/>
         <NamedIndividual IRI="#Rock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#beAlbumof"/>
+        <NamedIndividual IRI="#White_Album"/>
+        <NamedIndividual IRI="#The_Beatles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCertification"/>
+        <NamedIndividual IRI="#White_Album"/>
+        <NamedIndividual IRI="#Platinum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSong"/>
+        <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
+        <NamedIndividual IRI="#Make_Her_Say"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSong"/>
+        <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
+        <NamedIndividual IRI="#Sky_Might_Fall"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#beSongof"/>
+        <NamedIndividual IRI="#Maxwell&apos;s_Silver_Hammer"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#year"/>
@@ -324,12 +513,40 @@
         <Literal>1960-1970</Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#beAlbumof"/>
+        <ObjectProperty IRI="#hasAlbum"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#beGenre"/>
         <ObjectProperty IRI="#hasGenre"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#beSongof"/>
+        <ObjectProperty IRI="#hasSong"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#beAlbumof"/>
+        <Class IRI="#Album"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#beGenre"/>
         <Class IRI="#Genre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <Class IRI="#Artiste"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <Class IRI="#Musician"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <Class IRI="#Singer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCertification"/>
+        <Class IRI="#Album"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasGenre"/>
@@ -343,9 +560,37 @@
         <ObjectProperty IRI="#memberof"/>
         <Class IRI="#Singer"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#primaryinstrument"/>
+        <Class IRI="#Artiste"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#primaryinstrument"/>
+        <Class IRI="#Musician"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#beAlbumof"/>
+        <Class IRI="#Artiste"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#beAlbumof"/>
+        <Class IRI="#Musician"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#beAlbumof"/>
+        <Class IRI="#Singer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <Class IRI="#Album"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCertification"/>
+        <Class IRI="#Certification"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasGenre"/>
-        <Class IRI="#Instrument"/>
+        <Class IRI="#Genre"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#memberof"/>
