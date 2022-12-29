@@ -50,31 +50,7 @@
         <Class IRI="#musicgroup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#UtiliseCeTransport"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#aPourArret"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#aPourArrive"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#aPourDepart"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#aPourTransports"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#beGenre"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#estArriveDe"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#estDepartDe"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#estUtilisePar"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasGenre"/>
@@ -347,22 +323,6 @@
         <NamedIndividual IRI="#The_Beatles"/>
         <Literal>1960-1970</Literal>
     </DataPropertyAssertion>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#UtiliseCeTransport"/>
-        <ObjectProperty IRI="#estUtilisePar"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#aPourArret"/>
-        <ObjectProperty IRI="#aPourTransports"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#aPourArrive"/>
-        <ObjectProperty IRI="#estArriveDe"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#aPourDepart"/>
-        <ObjectProperty IRI="#estDepartDe"/>
-    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#beGenre"/>
         <ObjectProperty IRI="#hasGenre"/>

@@ -22,68 +22,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#UtiliseCeTransport -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#UtiliseCeTransport">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#estUtilisePar"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourArret -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourArret">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#aPourTransports"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourArrive -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourArrive">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#estArriveDe"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourDepart -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourDepart">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#estDepartDe"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#aPourTransports -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#aPourTransports"/>
-    
-
-
     <!-- http://www.semanticweb.org/Paris_transport_ontologie#beGenre -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#beGenre">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#hasGenre"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/Paris_transport_ontologie#Genre"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#estArriveDe -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#estArriveDe"/>
-    
-
-
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#estDepartDe -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#estDepartDe"/>
-    
-
-
-    <!-- http://www.semanticweb.org/Paris_transport_ontologie#estUtilisePar -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Paris_transport_ontologie#estUtilisePar"/>
     
 
 
