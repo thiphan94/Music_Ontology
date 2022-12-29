@@ -22,8 +22,8 @@ layout = [
     [sg.Frame(layout=[[sg.Button("Show all persons",size=(31,1))],
     [sg.Button("Genre"),sg.Text('',key='-Search-0'), sg.InputText(size=(19,1))],
     [sg.Button("Instrument"),sg.Text('',key='-Search-1'), sg.InputText(size=(15,1))],
-    [sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin'], size=(20, 3))],
-    [sg.Button("Name"),sg.Text('',key='-Search-2'), sg.InputText(size=(19,1))],
+    [sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin'], enable_events=True, key='combo',size=(20, 3))],
+    [sg.Button("Name"),sg.Text('',key='-Search-3'), sg.InputText(size=(19,1))],
     [sg.Button("Uber statistics for"), sg.Listbox((quarter), size=(20, 4), enable_events=True, key='_LIST_'), sg.Listbox((year), size=(20, 4), enable_events=True, key='_LIST1_')]
     ], title='Interface:'), sg.Column(col)],
 ]
@@ -36,15 +36,64 @@ while True:
     for i,j in values.items():
         print(i,j)
 
-    #Search person by instrument    
+    #Search all persons
+    if event == "Show all persons" :
+        # If new type of transport, add one Union with bas:NewTransport
+        all_transports = music_graph.query("""
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+               PREFIX owl: <http://www.w3.org/2002/07/owl#>
+               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+               PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+               SELECT ?bas
+               WHERE {{
+                ?bas rdf:type bas:Musician .
+               }
+               UNION {
+                ?bas rdf:type bas:Singer .
+               }
+               UNION {
+                ?bas rdf:type bas:Composer .
+               }
+               UNION {
+                ?bas rdf:type bas:Author .
+               }
+               UNION {
+                ?bas rdf:type bas:Interpreter .
+               }}
+
+               """)
+        # "Clean" the results to print only transport's name
+        liste_t=[]
+        for transport in all_transports:
+            for s in range(len(transport)):
+                s_ = str(transport[s]).split('#')
+                if 'http://www.semanticweb.org/music_ontologie' in s_:
+                    s_.remove('http://www.semanticweb.org/music_ontologie')
+                if not s_:
+                    sub = 'music_ontologie'
+                else:
+                    sub = s_[0]
+                #print(sub)  # print the element only
+                liste_t.append(sub)
+        liste_t="\n".join(liste_t)
+        window['-TEXT-'].update(liste_t)
+
+
+    #Search person by instrument
     if event == "Instrument":
         event, values = window.read()
+        instrument = values['combo']
+        print(instrument)
         to_print=[]
-        print(values.get(0))
-        instrument=values.get(0)
-        if len(instrument) == 0:
-            instrument = 'Marie'
-        # Cleaning
+        # print(values.get(0))
+        # instrument=values.get(0)
+        # print(len(instrument))
+        # if len(instrument) == 0:
+        #     instrument = 'Marie'
+        # # Cleaning
         instrument_ = instrument.replace(" ", "_")
         instrument_list = []
         instrument_list[:0] = instrument_
@@ -53,18 +102,18 @@ while True:
         if instrument_list[-1] == '_':
             del instrument_list[-1]
         instrument_ = ''.join(instrument_list)
-        # query for user's name and return transports, depart, arrivee
-        trajet = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
-               PREFIX owl: <http://www.w3.org/2002/07/owl#> 
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        # query for type of instrument and return person who play this instrument
+        trajet = music_graph.query("""
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+               PREFIX owl: <http://www.w3.org/2002/07/owl#>
+               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+               PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
                SELECT ?bas
                WHERE {{
-               ?bas bas:primaryinstrument bas:Guitar .
+               ?bas bas:primaryinstrument bas:"""+instrument_+""" .
                }}""")
 
         print(len(trajet))  # TODO Do not remove, otherwise, it will not show all the results
@@ -106,51 +155,7 @@ while True:
         window['-TEXT-'].update(to_print)
 
 
-    if event == "Show all persons" :
-        # If new type of transport, add one Union with bas:NewTransport
-        all_transports = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
-               PREFIX owl: <http://www.w3.org/2002/07/owl#> 
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-
-               SELECT ?bas
-               WHERE {{
-                ?bas rdf:type bas:Musician . 
-               }
-               UNION {
-                ?bas rdf:type bas:Singer . 
-               }
-               UNION {
-                ?bas rdf:type bas:Composer . 
-               }
-               UNION {
-                ?bas rdf:type bas:Author . 
-               }
-               UNION {
-                ?bas rdf:type bas:Interpreter . 
-               }}
-
-               """)
-        # "Clean" the results to print only transport's name
-        liste_t=[]
-        for transport in all_transports:
-            for s in range(len(transport)):
-                s_ = str(transport[s]).split('#')
-                if 'http://www.semanticweb.org/music_ontologie' in s_:
-                    s_.remove('http://www.semanticweb.org/music_ontologie')
-                if not s_:
-                    sub = 'music_ontologie'
-                else:
-                    sub = s_[0]
-                #print(sub)  # print the element only
-                liste_t.append(sub)
-        liste_t="\n".join(liste_t)
-        window['-TEXT-'].update(liste_t)
-
-
+    
 # Search person by name
     if event == "Name" :
         event, values = window.read()
@@ -169,13 +174,13 @@ while True:
             del genre_list[-1]
         genre_ = ''.join(genre_list)
         # query for user's name and return transports, depart, arrivee
-        trajet = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
-               PREFIX owl: <http://www.w3.org/2002/07/owl#> 
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        trajet = music_graph.query("""
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+               PREFIX owl: <http://www.w3.org/2002/07/owl#>
+               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+               PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
                SELECT ?bas
                WHERE {{
@@ -235,13 +240,13 @@ while True:
             del genre_list[-1]
         genre_ = ''.join(genre_list)
         # query for user's name and return transports, depart, arrivee
-        trajet = music_graph.query(""" 
-               PREFIX bas: <http://www.semanticweb.org/music_ontologie#> 
-               PREFIX owl: <http://www.w3.org/2002/07/owl#> 
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        trajet = music_graph.query("""
+               PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+               PREFIX owl: <http://www.w3.org/2002/07/owl#>
+               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+               PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
                SELECT ?bas
                WHERE {{
