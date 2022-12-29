@@ -16,7 +16,7 @@ import PySimpleGUI as sg
 
 sg.theme('DarkGrey1')   # Add a touch of color
 
-col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine to music ontology :\n   - Show all artistes available\n   - Search informations with query.",key='-TEXT-',size=(500,30),font=("Helvetica", 15), text_color='blue',)]],
+col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine to music ontology :\n   - Show all artistes available\n   - Search informations with query.",key='-TEXT-',size=(500,30),font=("Helvetica", 12), text_color='black',)]],
         title='Informations:')]]
 
 
