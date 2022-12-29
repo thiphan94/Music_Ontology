@@ -1,5 +1,6 @@
 # hello_psg.py
 #Transport LIST
+import rdflib
 from rdflib import Graph, URIRef
 from rdflib.tools import csv2rdf
 
@@ -18,9 +19,10 @@ col = [[sg.Frame(layout=[[sg.Multiline("Welcome to the prototype of this applica
 
 
 layout = [
-    [sg.Frame(layout=[[sg.Button("Show all Transport",size=(31,1))],
-    [sg.Button("Search Users"),sg.Text('',key='-Search-0'), sg.InputText(size=(19,1))],
+    [sg.Frame(layout=[[sg.Button("Show all persons",size=(31,1))],
+    [sg.Button("Genre"),sg.Text('',key='-Search-0'), sg.InputText(size=(19,1))],
     [sg.Button("Search Information"),sg.Text('',key='-Search-1'), sg.InputText(size=(15,1))],
+    [sg.Button("Name"),sg.Text('',key='-Search-2'), sg.InputText(size=(19,1))],
     [sg.Button("Uber statistics for"), sg.Listbox((quarter), size=(20, 4), enable_events=True, key='_LIST_'), sg.Listbox((year), size=(20, 4), enable_events=True, key='_LIST1_')]
     ], title='Interface:'), sg.Column(col)],
 ]
@@ -95,7 +97,7 @@ while True:
         window['-TEXT-'].update(to_print)
 
 
-    if event == "Show all Transport" :
+    if event == "Show all persons" :
         # If new type of transport, add one Union with bas:NewTransport
         all_transports = transport_graph.query(""" 
                PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
@@ -107,22 +109,19 @@ while True:
 
                SELECT ?bas
                WHERE {{
-                ?bas rdf:type bas:Bus . 
+                ?bas rdf:type bas:Musician . 
                }
                UNION {
-                ?bas rdf:type bas:Metro . 
+                ?bas rdf:type bas:Singer . 
                }
                UNION {
-                ?bas rdf:type bas:RER . 
+                ?bas rdf:type bas:Composer . 
                }
                UNION {
-                ?bas rdf:type bas:Uber . 
+                ?bas rdf:type bas:Author . 
                }
                UNION {
-                ?bas rdf:type bas:Taxi_VTC . 
-               }
-               UNION {
-                ?bas rdf:type bas:Lime . 
+                ?bas rdf:type bas:Interpreter . 
                }}
 
                """)
@@ -143,22 +142,23 @@ while True:
         window['-TEXT-'].update(liste_t)
 
 
-    if event == "Search Users":
+# Search person by name
+    if event == "Name" :
         event, values = window.read()
         to_print=[]
         print(values.get(0))
-        user_name=values.get(0)
-        if len(user_name) == 0:
-            user_name = 'Marie'
+        genre=values.get(0)
+        if len(genre) == 0:
+            genre = 'Marie'
         # Cleaning
-        user_name_ = user_name.replace(" ", "_")
-        user_name_list = []
-        user_name_list[:0] = user_name_
-        if user_name_list[0] == '_':
-            del user_name_list[0]
-        if user_name_list[-1] == '_':
-            del user_name_list[-1]
-        user_name_ = ''.join(user_name_list)
+        genre_ = genre.replace(" ", "_")
+        genre_list = []
+        genre_list[:0] = genre_
+        if genre_list[0] == '_':
+            del genre_list[0]
+        if genre_list[-1] == '_':
+            del genre_list[-1]
+        genre_ = ''.join(genre_list)
         # query for user's name and return transports, depart, arrivee
         trajet = transport_graph.query(""" 
                PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
@@ -170,15 +170,8 @@ while True:
 
                SELECT ?bas
                WHERE {{
-               ?bas bas:estDepartDe bas:"""+user_name_+""" .
-               }
-               UNION {
-                ?bas bas:estUtilisePar bas:"""+user_name_+""" .  
-               }
-               UNION {
-               ?bas bas:estArriveDe bas:"""+user_name_+""" .
-               }
-               }""")
+               ?bas bas:hasGenre bas:"""+genre_+""" .
+               }}""")
 
         print(len(trajet))  # TODO Do not remove, otherwise, it will not show all the results
         if len(trajet)==0:
@@ -188,14 +181,75 @@ while True:
         counter = 0
         for tra in trajet:
             if counter == 0:
-                print("Departure : ", end='')
-                to_print.append("Departure : ")
+                print("Person : ", end='')
+                to_print.append("Person : ")
             elif counter == 1:
-                print("Transports : \n    -", end='')
-                to_print.append("Transports : \n    -")
-            elif 1 == len(trajet) - counter:
-                print("Arriving : ", end='')
-                to_print.append("Arriving : ")
+                print("Instrument : \n    -", end='')
+                to_print.append("Instrument : \n    -")
+            else:
+                print('    -', end='')
+                to_print.append('    -')
+            for s in range(len(tra)):
+                s_ = str(tra[s]).split('#')
+                if 'http://www.semanticweb.org/Paris_transport_ontologie' in s_:
+                    s_.remove('http://www.semanticweb.org/Paris_transport_ontologie')
+                if not s_:
+                    sub = 'Paris_transport_ontologie'
+                else:
+                    sub = s_[0]
+                print(sub)  # print the element only
+                to_print.append(sub)
+                to_print.append("&")
+            counter += 1
+        for idx,itm in enumerate(to_print):
+            if itm =="&":
+                to_print[idx]="\n"
+
+        to_print = " ".join(to_print)
+        window['-TEXT-'].update(to_print)
+    if event == "Genre":
+        event, values = window.read()
+        to_print=[]
+        print(values.get(0))
+        genre=values.get(0)
+        if len(genre) == 0:
+            genre = 'Marie'
+        # Cleaning
+        genre_ = genre.replace(" ", "_")
+        genre_list = []
+        genre_list[:0] = genre_
+        if genre_list[0] == '_':
+            del genre_list[0]
+        if genre_list[-1] == '_':
+            del genre_list[-1]
+        genre_ = ''.join(genre_list)
+        # query for user's name and return transports, depart, arrivee
+        trajet = transport_graph.query(""" 
+               PREFIX bas: <http://www.semanticweb.org/Paris_transport_ontologie#> 
+               PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+               PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
+               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+               SELECT ?bas
+               WHERE {{
+               ?bas bas:hasGenre bas:"""+genre_+""" .
+               }}""")
+
+        print(len(trajet))  # TODO Do not remove, otherwise, it will not show all the results
+        if len(trajet)==0:
+            to_print.append("User not found")
+
+        # "Clean" the results to print only transport's name
+        counter = 0
+        for tra in trajet:
+            if counter == 0:
+                print("Person : ", end='')
+                to_print.append("Person : ")
+            elif counter == 1:
+                print("Instrument : \n    -", end='')
+                to_print.append("Instrument : \n    -")
             else:
                 print('    -', end='')
                 to_print.append('    -')

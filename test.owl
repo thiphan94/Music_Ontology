@@ -1,0 +1,1286 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/Paris_transport_ontologie"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/Paris_transport_ontologie">
+    <Prefix name="" IRI="http://www.semanticweb.org/Paris_transport_ontologie"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="Paris_transport_ontologie" IRI="http://www.semanticweb.org/Paris_transport_ontologie#"/>
+    <Declaration>
+        <Class IRI="#Aeroports"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arrets"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Artiste"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Autres"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Composer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gares"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instrument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interpreter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lieux"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lieux_touristiques"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Locations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Marche_a_pied"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Metro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Musician"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RATP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RER"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Services"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Singer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stations_Velib"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Taxi_VTC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transports"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trotinettes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Uber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Usagers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Velib"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourArret"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourArrive"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourDepart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourTransports"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estArriveDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estDepartDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estUtilisePar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGenre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#primaryinstrument"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Heure_Arrive_Uber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Heure_Depart_Uber"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alexis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alina_Pogostkina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bus_46"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cadet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Camille"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Charles_De_Gaulle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chatelet_les_Halles"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Classic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Domicile_de_Jean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Domicile_de_Marie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gare_de_l_est"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Guitar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#La_Defense"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Louis_Armstrong"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Louis_Blanc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Louvre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Marche_Camille"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Marche_Jean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Marche_Marie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Marie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Metro_5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Metro_7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Olaf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Otis_Blackwell"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Parc_Floral"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Piano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pop"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RER_B"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Republique"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rock"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Station_Velib_La_Defense"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Station_Velib_Porte_Maillot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tour_Eiffel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trotinette_Lime_Camille"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Velib_Olaf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Violin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Whitney_Houston"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Aeroports"/>
+        <Class IRI="#Lieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arrets"/>
+        <Class IRI="#Lieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Artiste"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Author"/>
+        <Class IRI="#Artiste"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Autres"/>
+        <Class IRI="#Lieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bus"/>
+        <Class IRI="#RATP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Composer"/>
+        <Class IRI="#Artiste"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gares"/>
+        <Class IRI="#Lieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interpreter"/>
+        <Class IRI="#Artiste"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lieux"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aPourTransports"/>
+            <Class IRI="#Transports"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lieux_touristiques"/>
+        <Class IRI="#Lieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lime"/>
+        <Class IRI="#Trotinettes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Locations"/>
+        <Class IRI="#Transports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Marche_a_pied"/>
+        <Class IRI="#Transports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Metro"/>
+        <Class IRI="#RATP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Musician"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RATP"/>
+        <Class IRI="#Transports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RER"/>
+        <Class IRI="#RATP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Services"/>
+        <Class IRI="#Transports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Singer"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stations_Velib"/>
+        <Class IRI="#Lieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Taxi_VTC"/>
+        <Class IRI="#Services"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transports"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aPourArret"/>
+            <Class IRI="#Lieux"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transports"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#estUtilisePar"/>
+            <Class IRI="#Usagers"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trotinettes"/>
+        <Class IRI="#Locations"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Uber"/>
+        <Class IRI="#Services"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Usagers"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#UtiliseCeTransport"/>
+            <Class IRI="#Transports"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Usagers"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#aPourArrive"/>
+            <Class IRI="#Lieux"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Usagers"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#aPourDepart"/>
+            <Class IRI="#Lieux"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Velib"/>
+        <Class IRI="#Locations"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Author"/>
+        <Class IRI="#Composer"/>
+        <Class IRI="#Interpreter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Lieux"/>
+        <Class IRI="#Transports"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Lieux"/>
+        <Class IRI="#Usagers"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Musician"/>
+        <Class IRI="#Singer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Transports"/>
+        <Class IRI="#Usagers"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Usagers"/>
+        <NamedIndividual IRI="#Alexis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Interpreter"/>
+        <NamedIndividual IRI="#Alina_Pogostkina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Bus"/>
+        <NamedIndividual IRI="#Bus_46"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Arrets"/>
+        <NamedIndividual IRI="#Cadet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usagers"/>
+        <NamedIndividual IRI="#Camille"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Aeroports"/>
+        <NamedIndividual IRI="#Charles_De_Gaulle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Arrets"/>
+        <NamedIndividual IRI="#Chatelet_les_Halles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Classic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Autres"/>
+        <NamedIndividual IRI="#Domicile_de_Jean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Autres"/>
+        <NamedIndividual IRI="#Domicile_de_Marie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Gares"/>
+        <NamedIndividual IRI="#Gare_de_l_est"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instrument"/>
+        <NamedIndividual IRI="#Guitar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usagers"/>
+        <NamedIndividual IRI="#Jean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Autres"/>
+        <NamedIndividual IRI="#La_Defense"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Musician"/>
+        <NamedIndividual IRI="#Louis_Armstrong"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Arrets"/>
+        <NamedIndividual IRI="#Louis_Blanc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lieux_touristiques"/>
+        <NamedIndividual IRI="#Louvre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Composer"/>
+        <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Interpreter"/>
+        <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Marche_a_pied"/>
+        <NamedIndividual IRI="#Marche_Camille"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Marche_a_pied"/>
+        <NamedIndividual IRI="#Marche_Jean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Marche_a_pied"/>
+        <NamedIndividual IRI="#Marche_Marie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Marche_a_pied"/>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usagers"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Metro"/>
+        <NamedIndividual IRI="#Metro_5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Metro"/>
+        <NamedIndividual IRI="#Metro_7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Usagers"/>
+        <NamedIndividual IRI="#Olaf"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Author"/>
+        <NamedIndividual IRI="#Otis_Blackwell"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Arrets"/>
+        <NamedIndividual IRI="#Parc_Floral"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instrument"/>
+        <NamedIndividual IRI="#Piano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Pop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RER"/>
+        <NamedIndividual IRI="#RER_B"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Arrets"/>
+        <NamedIndividual IRI="#Republique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Rock"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stations_Velib"/>
+        <NamedIndividual IRI="#Station_Velib_La_Defense"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stations_Velib"/>
+        <NamedIndividual IRI="#Station_Velib_Porte_Maillot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Taxi_VTC"/>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lieux_touristiques"/>
+        <NamedIndividual IRI="#Tour_Eiffel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Autres"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lime"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Camille"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lime"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lime"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Uber"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Velib"/>
+        <NamedIndividual IRI="#Velib_Olaf"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instrument"/>
+        <NamedIndividual IRI="#Violin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Singer"/>
+        <NamedIndividual IRI="#Whitney_Houston"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Alexis"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <NamedIndividual IRI="#Alexis"/>
+        <NamedIndividual IRI="#Tour_Eiffel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <NamedIndividual IRI="#Alexis"/>
+        <NamedIndividual IRI="#Charles_De_Gaulle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Bus_46"/>
+        <NamedIndividual IRI="#Domicile_de_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Bus_46"/>
+        <NamedIndividual IRI="#Louis_Blanc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Bus_46"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Cadet"/>
+        <NamedIndividual IRI="#Marche_Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Cadet"/>
+        <NamedIndividual IRI="#Marche_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Cadet"/>
+        <NamedIndividual IRI="#Metro_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Cadet"/>
+        <NamedIndividual IRI="#Metro_7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Camille"/>
+        <NamedIndividual IRI="#Marche_Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Camille"/>
+        <NamedIndividual IRI="#Metro_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Camille"/>
+        <NamedIndividual IRI="#Metro_7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Camille"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <NamedIndividual IRI="#Camille"/>
+        <NamedIndividual IRI="#Louvre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <NamedIndividual IRI="#Camille"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Charles_De_Gaulle"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estDepartDe"/>
+        <NamedIndividual IRI="#Charles_De_Gaulle"/>
+        <NamedIndividual IRI="#Alexis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Chatelet_les_Halles"/>
+        <NamedIndividual IRI="#Metro_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Chatelet_les_Halles"/>
+        <NamedIndividual IRI="#RER_B"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Domicile_de_Jean"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estDepartDe"/>
+        <NamedIndividual IRI="#Domicile_de_Jean"/>
+        <NamedIndividual IRI="#Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Domicile_de_Marie"/>
+        <NamedIndividual IRI="#Marche_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estDepartDe"/>
+        <NamedIndividual IRI="#Domicile_de_Marie"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Gare_de_l_est"/>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estDepartDe"/>
+        <NamedIndividual IRI="#Gare_de_l_est"/>
+        <NamedIndividual IRI="#Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Marche_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Metro_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Metro_7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Louvre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <NamedIndividual IRI="#Jean"/>
+        <NamedIndividual IRI="#Domicile_de_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#La_Defense"/>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estArriveDe"/>
+        <NamedIndividual IRI="#La_Defense"/>
+        <NamedIndividual IRI="#Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Louis_Blanc"/>
+        <NamedIndividual IRI="#Bus_46"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Louis_Blanc"/>
+        <NamedIndividual IRI="#RER_B"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Louvre"/>
+        <NamedIndividual IRI="#Marche_Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Louvre"/>
+        <NamedIndividual IRI="#Marche_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Louvre"/>
+        <NamedIndividual IRI="#Metro_7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estArriveDe"/>
+        <NamedIndividual IRI="#Louvre"/>
+        <NamedIndividual IRI="#Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estArriveDe"/>
+        <NamedIndividual IRI="#Louvre"/>
+        <NamedIndividual IRI="#Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
+        <NamedIndividual IRI="#Classic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#primaryinstrument"/>
+        <NamedIndividual IRI="#Ludwig_van_Beethoven"/>
+        <NamedIndividual IRI="#Piano"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Camille"/>
+        <NamedIndividual IRI="#Cadet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Camille"/>
+        <NamedIndividual IRI="#Louvre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Marche_Camille"/>
+        <NamedIndividual IRI="#Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Jean"/>
+        <NamedIndividual IRI="#Cadet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Jean"/>
+        <NamedIndividual IRI="#Louvre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Marche_Jean"/>
+        <NamedIndividual IRI="#Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Marie"/>
+        <NamedIndividual IRI="#Domicile_de_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Marie"/>
+        <NamedIndividual IRI="#Parc_Floral"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Marche_Marie"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+        <NamedIndividual IRI="#La_Defense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+        <NamedIndividual IRI="#Station_Velib_La_Defense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+        <NamedIndividual IRI="#Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Marie"/>
+        <NamedIndividual IRI="#Bus_46"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Marie"/>
+        <NamedIndividual IRI="#Marche_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Marie"/>
+        <NamedIndividual IRI="#Metro_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Marie"/>
+        <NamedIndividual IRI="#RER_B"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Marie"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <NamedIndividual IRI="#Marie"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <NamedIndividual IRI="#Marie"/>
+        <NamedIndividual IRI="#Domicile_de_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Metro_5"/>
+        <NamedIndividual IRI="#Cadet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Metro_5"/>
+        <NamedIndividual IRI="#Chatelet_les_Halles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Metro_5"/>
+        <NamedIndividual IRI="#Republique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Metro_5"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Metro_7"/>
+        <NamedIndividual IRI="#Cadet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Metro_7"/>
+        <NamedIndividual IRI="#Louvre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Metro_7"/>
+        <NamedIndividual IRI="#Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Olaf"/>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Olaf"/>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <NamedIndividual IRI="#Olaf"/>
+        <NamedIndividual IRI="#Velib_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <NamedIndividual IRI="#Olaf"/>
+        <NamedIndividual IRI="#La_Defense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <NamedIndividual IRI="#Olaf"/>
+        <NamedIndividual IRI="#Gare_de_l_est"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Parc_Floral"/>
+        <NamedIndividual IRI="#Bus_46"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Parc_Floral"/>
+        <NamedIndividual IRI="#Marche_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#RER_B"/>
+        <NamedIndividual IRI="#Chatelet_les_Halles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#RER_B"/>
+        <NamedIndividual IRI="#Louis_Blanc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#RER_B"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Republique"/>
+        <NamedIndividual IRI="#Metro_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Republique"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Republique"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Republique"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Station_Velib_La_Defense"/>
+        <NamedIndividual IRI="#Marche_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Station_Velib_La_Defense"/>
+        <NamedIndividual IRI="#Velib_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Station_Velib_Porte_Maillot"/>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Station_Velib_Porte_Maillot"/>
+        <NamedIndividual IRI="#Velib_Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+        <NamedIndividual IRI="#Gare_de_l_est"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+        <NamedIndividual IRI="#Station_Velib_Porte_Maillot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Taxis_Olaf"/>
+        <NamedIndividual IRI="#Olaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Tour_Eiffel"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estArriveDe"/>
+        <NamedIndividual IRI="#Tour_Eiffel"/>
+        <NamedIndividual IRI="#Alexis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estArriveDe"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estDepartDe"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+        <NamedIndividual IRI="#Camille"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+        <NamedIndividual IRI="#Domicile_de_Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+        <NamedIndividual IRI="#Republique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Jean"/>
+        <NamedIndividual IRI="#Jean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+        <NamedIndividual IRI="#Republique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+        <NamedIndividual IRI="#Travail_de_Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Trotinette_Lime_Marie"/>
+        <NamedIndividual IRI="#Marie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+        <NamedIndividual IRI="#Charles_De_Gaulle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+        <NamedIndividual IRI="#Tour_Eiffel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+        <NamedIndividual IRI="#Alexis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Velib_Olaf"/>
+        <NamedIndividual IRI="#Station_Velib_La_Defense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#aPourArret"/>
+        <NamedIndividual IRI="#Velib_Olaf"/>
+        <NamedIndividual IRI="#Station_Velib_Porte_Maillot"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Heure_Arrive_Uber"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+        <Literal>12:45</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Heure_Depart_Uber"/>
+        <NamedIndividual IRI="#Uber_Alexis"/>
+        <Literal>12:00</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <ObjectProperty IRI="#estUtilisePar"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#aPourArret"/>
+        <ObjectProperty IRI="#aPourTransports"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <ObjectProperty IRI="#estArriveDe"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <ObjectProperty IRI="#estDepartDe"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <Class IRI="#Usagers"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourArret"/>
+        <Class IRI="#Transports"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <Class IRI="#Usagers"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <Class IRI="#Usagers"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <Class IRI="#Lieux"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estArriveDe"/>
+        <Class IRI="#Lieux"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estDepartDe"/>
+        <Class IRI="#Lieux"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <Class IRI="#Transports"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Artiste"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Musician"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#primaryinstrument"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#UtiliseCeTransport"/>
+        <Class IRI="#Transports"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourArret"/>
+        <Class IRI="#Lieux"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourArrive"/>
+        <Class IRI="#Lieux"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourDepart"/>
+        <Class IRI="#Lieux"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourTransports"/>
+        <Class IRI="#Transports"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estArriveDe"/>
+        <Class IRI="#Usagers"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estDepartDe"/>
+        <Class IRI="#Usagers"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estUtilisePar"/>
+        <Class IRI="#Usagers"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#primaryinstrument"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Heure_Arrive_Uber"/>
+        <Class IRI="#Uber"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Heure_Depart_Uber"/>
+        <Class IRI="#Uber"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Heure_Arrive_Uber"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Heure_Depart_Uber"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
