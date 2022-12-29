@@ -48,6 +48,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/music_ontologie#beSongof">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/music_ontologie#hasSong"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Song"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Album"/>
     </owl:ObjectProperty>
     
 
@@ -84,7 +86,10 @@
 
     <!-- http://www.semanticweb.org/music_ontologie#hasSong -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/music_ontologie#hasSong"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/music_ontologie#hasSong">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Album"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Song"/>
+    </owl:ObjectProperty>
     
 
 
@@ -396,6 +401,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Make_Her_Say">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Song"/>
+        <music_ontologie:beSongof rdf:resource="http://www.semanticweb.org/music_ontologie#Man_on_the_Moon:_The_End_of_Day"/>
     </owl:NamedIndividual>
     
 
@@ -513,6 +519,23 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Whitney_Houston">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/music_ontologie#albumtest -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#albumtest">
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Album"/>
+        <music_ontologie:hasSong rdf:resource="http://www.semanticweb.org/music_ontologie#songtest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/music_ontologie#songtest -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#songtest">
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Song"/>
     </owl:NamedIndividual>
     
 

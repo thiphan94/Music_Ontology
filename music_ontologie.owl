@@ -176,6 +176,12 @@
         <NamedIndividual IRI="#Whitney_Houston"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#albumtest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#songtest"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
     </Declaration>
     <Declaration>
@@ -356,6 +362,14 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Album"/>
+        <NamedIndividual IRI="#albumtest"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Song"/>
+        <NamedIndividual IRI="#songtest"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Album"/>
         <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -438,6 +452,11 @@
         <NamedIndividual IRI="#Piano"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#beSongof"/>
+        <NamedIndividual IRI="#Make_Her_Say"/>
+        <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#memberof"/>
         <NamedIndividual IRI="#Paul_McCartney"/>
         <NamedIndividual IRI="#The_Beatles"/>
@@ -494,6 +513,11 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasSong"/>
+        <NamedIndividual IRI="#albumtest"/>
+        <NamedIndividual IRI="#songtest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSong"/>
         <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
         <NamedIndividual IRI="#Make_Her_Say"/>
     </ObjectPropertyAssertion>
@@ -533,6 +557,10 @@
         <Class IRI="#Genre"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#beSongof"/>
+        <Class IRI="#Song"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAlbum"/>
         <Class IRI="#Artiste"/>
     </ObjectPropertyDomain>
@@ -555,6 +583,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasGenre"/>
         <Class IRI="#Musician"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSong"/>
+        <Class IRI="#Album"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#memberof"/>
@@ -581,6 +613,10 @@
         <Class IRI="#Singer"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#beSongof"/>
+        <Class IRI="#Album"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAlbum"/>
         <Class IRI="#Album"/>
     </ObjectPropertyRange>
@@ -591,6 +627,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasGenre"/>
         <Class IRI="#Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSong"/>
+        <Class IRI="#Song"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#memberof"/>
