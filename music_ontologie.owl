@@ -12,6 +12,7 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="music_ontologie" IRI="http://www.semanticweb.org/music_ontologie#"/>
     <Prefix name="Paris_transport_ontologie" IRI="http://www.semanticweb.org/Paris_transport_ontologie#"/>
     <Declaration>
         <Class IRI="#Album"/>
@@ -39,12 +40,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Interpreter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Musician"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Singer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Song"/>
@@ -199,15 +194,6 @@
         <Class IRI="#Interpreter"/>
         <Class IRI="#Artiste"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Author"/>
-        <Class IRI="#Composer"/>
-        <Class IRI="#Interpreter"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Musician"/>
-        <Class IRI="#Singer"/>
-    </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#Album"/>
         <NamedIndividual IRI="#Abbey_Road"/>
@@ -221,7 +207,7 @@
         <NamedIndividual IRI="#Charlie_Puth"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Singer"/>
+        <Class IRI="#Interpreter"/>
         <NamedIndividual IRI="#Charlie_Puth"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -249,11 +235,7 @@
         <NamedIndividual IRI="#George_Harrison"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Musician"/>
-        <NamedIndividual IRI="#George_Harrison"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Singer"/>
+        <Class IRI="#Interpreter"/>
         <NamedIndividual IRI="#George_Harrison"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -277,11 +259,7 @@
         <NamedIndividual IRI="#John_Lennon"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Musician"/>
-        <NamedIndividual IRI="#John_Lennon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Singer"/>
+        <Class IRI="#Interpreter"/>
         <NamedIndividual IRI="#John_Lennon"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -289,11 +267,11 @@
         <NamedIndividual IRI="#Kid_Cudi"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Singer"/>
+        <Class IRI="#Interpreter"/>
         <NamedIndividual IRI="#Kid_Cudi"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Musician"/>
+        <Class IRI="#Composer"/>
         <NamedIndividual IRI="#Louis_Armstrong"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -313,11 +291,7 @@
         <NamedIndividual IRI="#Paul_McCartney"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Musician"/>
-        <NamedIndividual IRI="#Paul_McCartney"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Singer"/>
+        <Class IRI="#Interpreter"/>
         <NamedIndividual IRI="#Paul_McCartney"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -357,7 +331,7 @@
         <NamedIndividual IRI="#White_Album"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Singer"/>
+        <Class IRI="#Interpreter"/>
         <NamedIndividual IRI="#Whitney_Houston"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -565,14 +539,6 @@
         <Class IRI="#Artiste"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAlbum"/>
-        <Class IRI="#Musician"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAlbum"/>
-        <Class IRI="#Singer"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCertification"/>
         <Class IRI="#Album"/>
     </ObjectPropertyDomain>
@@ -581,36 +547,16 @@
         <Class IRI="#Artiste"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasGenre"/>
-        <Class IRI="#Musician"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSong"/>
         <Class IRI="#Album"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#memberof"/>
-        <Class IRI="#Singer"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#primaryinstrument"/>
         <Class IRI="#Artiste"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#primaryinstrument"/>
-        <Class IRI="#Musician"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#beAlbumof"/>
         <Class IRI="#Artiste"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#beAlbumof"/>
-        <Class IRI="#Musician"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#beAlbumof"/>
-        <Class IRI="#Singer"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#beSongof"/>

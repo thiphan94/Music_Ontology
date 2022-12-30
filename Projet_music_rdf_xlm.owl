@@ -29,8 +29,6 @@
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/music_ontologie#hasAlbum"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Album"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Artiste"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
     </owl:ObjectProperty>
     
 
@@ -58,8 +56,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/music_ontologie#hasAlbum">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Artiste"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Album"/>
     </owl:ObjectProperty>
     
@@ -78,7 +74,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/music_ontologie#hasGenre">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Artiste"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Genre"/>
     </owl:ObjectProperty>
     
@@ -96,7 +91,6 @@
     <!-- http://www.semanticweb.org/music_ontologie#memberof -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/music_ontologie#memberof">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Group"/>
     </owl:ObjectProperty>
     
@@ -106,7 +100,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/music_ontologie#primaryinstrument">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Artiste"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/music_ontologie#Instrument"/>
     </owl:ObjectProperty>
     
@@ -216,20 +209,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/music_ontologie#Musician -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/music_ontologie#Musician">
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/music_ontologie#Singer -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/music_ontologie#Singer"/>
-    
-
-
     <!-- http://www.semanticweb.org/music_ontologie#Song -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/music_ontologie#Song"/>
@@ -270,7 +249,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Charlie_Puth">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
     </owl:NamedIndividual>
     
 
@@ -321,8 +300,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#George_Harrison">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Pop"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Rock"/>
         <music_ontologie:memberof rdf:resource="http://www.semanticweb.org/music_ontologie#The_Beatles"/>
@@ -360,8 +338,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#John_Lennon">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Author"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
         <music_ontologie:memberof rdf:resource="http://www.semanticweb.org/music_ontologie#The_Beatles"/>
         <music_ontologie:primaryinstrument rdf:resource="http://www.semanticweb.org/music_ontologie#Guitar"/>
     </owl:NamedIndividual>
@@ -372,7 +349,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Kid_Cudi">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
         <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#Man_on_the_Moon:_The_End_of_Day"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Hiphop"/>
     </owl:NamedIndividual>
@@ -382,7 +359,7 @@
     <!-- http://www.semanticweb.org/music_ontologie#Louis_Armstrong -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Louis_Armstrong">
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
     </owl:NamedIndividual>
     
 
@@ -418,8 +395,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Paul_McCartney">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Musician"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
         <music_ontologie:memberof rdf:resource="http://www.semanticweb.org/music_ontologie#The_Beatles"/>
         <music_ontologie:primaryinstrument rdf:resource="http://www.semanticweb.org/music_ontologie#Guitar"/>
     </owl:NamedIndividual>
@@ -518,7 +494,7 @@
     <!-- http://www.semanticweb.org/music_ontologie#Whitney_Houston -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Whitney_Houston">
-        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Singer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
     </owl:NamedIndividual>
     
 
@@ -556,25 +532,6 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Song"/>
         <music_ontologie:beSongof rdf:resource="http://www.semanticweb.org/music_ontologie#Abbey_Road"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/music_ontologie#Author"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/music_ontologie#Composer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/music_ontologie#Interpreter"/>
-        </owl:members>
-    </rdf:Description>
 </rdf:RDF>
 
 
