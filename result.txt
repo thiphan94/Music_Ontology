@@ -1,0 +1,2 @@
+Query: search by ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven']

@@ -3,6 +3,7 @@
 import rdflib
 from rdflib import Graph, URIRef
 from rdflib.tools import csv2rdf
+from SPARQLWrapper import SPARQLWrapper, JSON
 
 music_graph = Graph()
 music_graph.parse("Projet_music_rdf_xlm.owl")
@@ -30,6 +31,9 @@ layout = [
 ]
 # Create the window
 window = sg.Window("Music Ontology", layout,size=(1080,550),return_keyboard_events=True)
+
+
+sparql = SPARQLWrapper("http://dbpedia.org/sparql")
 
 # Create an event loop
 while True:
@@ -257,12 +261,14 @@ while True:
                     ?album bas:hasCertification bas:"""+input[2]+"""
                     }""")
         print(len(search))  # TODO Do not remove, otherwise, it will not show all the results
+        
         if len(search)==0:
             to_print.append("Not found!")
-
+        list_result =[]
         # Print results
         for tra in search:
             counter=0
+
             for s in range(len(tra)):
                 
                 s_ = str(tra[s]).split('#')
@@ -273,6 +279,7 @@ while True:
                 else:
                     sub = s_[0]
                 print(sub)  # print the element only
+                list_result.append(sub)
                 #print only artiste and album
                 if input[0]=='':
                     if input[1] == '':   
@@ -320,10 +327,10 @@ while True:
                     to_print.append("&")
                 else:
                     if counter == 0:
-                            to_print.append("Artiste:")
-                            to_print.append(" ")
-                            to_print.append(sub)
-                            to_print.append(", ")
+                        to_print.append("Artiste:")
+                        to_print.append(" ")
+                        to_print.append(sub)
+                        to_print.append(", ")
                     elif counter == 1:
                         to_print.append("Album:")
                         to_print.append(" ")
@@ -331,13 +338,21 @@ while True:
                         to_print.append("&")
                 
                 counter += 1
+        #Write results to file
+        file = open("result.txt", "w")
+        file.write("Query: search by " + str(input) + "\n" +"Result(s) "+ str(list_result) + "\n")
+        file.close()
+        file1 = open('result.txt', 'r')
+        print(file1.read())
+        file1.close()
+
         for idx,itm in enumerate(to_print):
             if itm =="&":
                 to_print[idx]="\n"
 
         to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
-
+        
         #Search Artiste by genre
     if event == "Genre":
         event, values = window.read()
