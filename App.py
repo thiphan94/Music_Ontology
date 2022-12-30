@@ -173,7 +173,7 @@ while True:
                     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                    SELECT ?bas
+                    SELECT DISTINCT ?bas
                     WHERE {
                     ?bas bas:primaryinstrument bas:"""+input[1]+""" .
                     }""")
@@ -187,7 +187,7 @@ while True:
                         PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                        SELECT ?bas ?album
+                        SELECT DISTINCT ?bas ?album
                         WHERE {
                         ?bas bas:primaryinstrument bas:"""+input[1]+""" .
                         ?bas bas:hasAlbum ?album .
@@ -204,7 +204,7 @@ while True:
                     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                    SELECT ?bas 
+                    SELECT DISTINCT ?bas 
                     WHERE {
                     ?bas bas:hasGenre bas:"""+input[0]+""" .
                     }""")
@@ -218,7 +218,7 @@ while True:
                     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                    SELECT ?bas ?album
+                    SELECT DISTINCT ?bas ?album
                     WHERE {
                     ?bas bas:hasGenre bas:"""+input[0]+""" .
                     ?bas bas:hasAlbum ?album .
@@ -234,7 +234,7 @@ while True:
                     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                    SELECT ?bas 
+                    SELECT DISTINCT ?bas 
                     WHERE {
                     ?bas bas:hasGenre bas:"""+input[0]+""" .
                     ?bas bas:primaryinstrument bas:"""+input[1]+""" 
@@ -249,7 +249,7 @@ while True:
                     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                    SELECT ?bas ?album
+                    SELECT DISTINCT ?bas ?album
                     WHERE {
                     ?bas bas:hasGenre bas:"""+input[0]+""" .
                     ?bas bas:primaryinstrument bas:"""+input[1]+""" .
@@ -276,56 +276,56 @@ while True:
                 #print only artiste and album
                 if input[0]=='':
                     if input[1] == '':   
-                        to_print.append("Album")
+                        to_print.append("Album:")
                         to_print.append(" ")
                         to_print.append(sub)
                         to_print.append("&")
                     elif input[2] == '':
-                        to_print.append("Artiste")
+                        to_print.append("Artiste:")
                         to_print.append(" ")
                         to_print.append(sub)
                         to_print.append("&")
                     else:
                         if counter == 0:
-                            to_print.append("Artiste")
+                            to_print.append("Artiste:")
                             to_print.append(" ")
                             to_print.append(sub)
                             to_print.append(", ")
                         elif counter == 1:
-                            to_print.append("Album")
+                            to_print.append("Album:")
                             to_print.append(" ")
                             to_print.append(sub)
                             to_print.append("&")
                 elif input[1]=='':
                     if input[2] == '':
-                        to_print.append("Artiste")
+                        to_print.append("Artiste:")
                         to_print.append(" ")
                         to_print.append(sub)
                         to_print.append("&")
                     else:
                         if counter == 0:
-                            to_print.append("Artiste")
+                            to_print.append("Artiste:")
                             to_print.append(" ")
                             to_print.append(sub)
                             to_print.append(", ")
                         elif counter == 1:
-                            to_print.append("Album")
+                            to_print.append("Album:")
                             to_print.append(" ")
                             to_print.append(sub)
                             to_print.append("&")
                 elif input[2]=='':
-                    to_print.append("Artiste")
+                    to_print.append("Artiste:")
                     to_print.append(" ")
                     to_print.append(sub)
                     to_print.append("&")
                 else:
                     if counter == 0:
-                            to_print.append("Artiste")
+                            to_print.append("Artiste:")
                             to_print.append(" ")
                             to_print.append(sub)
                             to_print.append(", ")
                     elif counter == 1:
-                        to_print.append("Album")
+                        to_print.append("Album:")
                         to_print.append(" ")
                         to_print.append(sub)
                         to_print.append("&")
