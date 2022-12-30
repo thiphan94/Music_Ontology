@@ -21,7 +21,7 @@ col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine
 
 
 layout = [
-    [sg.Frame(layout=[[sg.Button("Show all persons",size=(31,1))],
+    [sg.Frame(layout=[[sg.Button("Show all Artistes",size=(31,1))],
     [sg.Button("Genre"),sg.Text('',key='-Search-0'), sg.InputCombo(['Classic', 'Rock', 'Hiphop', 'Rap', 'Pop'], enable_events=True, key='combogenre',size=(20, 3))],
     [sg.Button("Instrument"),sg.Text('',key='-Search-1'), sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin','Vocals'], enable_events=True, key='comboinstrument',size=(20, 3))],
     [sg.Button("Music Certification"),sg.Text('',key='-Search-2'), sg.InputCombo(['Diamond', 'Gold', 'Platinum'], enable_events=True, key='combocertification',size=(20, 3))],
@@ -38,8 +38,8 @@ while True:
     for i,j in values.items():
         print(i,j)
 
-    #Search all persons
-    if event == "Show all persons" :
+    #Search all Artistes
+    if event == "Show all Artistes" :
         # If new type of transport, add one Union with bas:NewTransport
         all_transports = music_graph.query("""
                PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
@@ -78,7 +78,7 @@ while True:
         window['-TEXT-'].update(liste_t)
 
 
-    #Search person by instrument
+    #Search Artiste by instrument
     if event == "Instrument":
         event, values = window.read()
         instrument = values['comboinstrument']
@@ -98,7 +98,7 @@ while True:
         if instrument_list[-1] == '_':
             del instrument_list[-1]
         instrument_ = ''.join(instrument_list)
-        # query for type of instrument and return person who play this instrument
+        # query for type of instrument and return Artiste who play this instrument
         search = music_graph.query("""
                PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
                PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -117,7 +117,7 @@ while True:
             to_print.append("Not found!")
 
         # Print results
-        strx="Person use " + str(instrument_) +": "
+        strx="Artiste use " + str(instrument_) +": "
         to_print.append(strx)
         to_print.append("&")
         for tra in search:
@@ -142,53 +142,135 @@ while True:
 
 
     
-#Search person by combo
+#Search Artiste by combo
     if event == "Search":
         event, values = window.read()
+        
         print("test",values)
         input = [values['combogenre'],values['comboinstrument'],values['combocertification']]
         print("test2",input)
         to_print=[]
-        search = music_graph.query("""
-                PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
-                PREFIX owl: <http://www.w3.org/2002/07/owl#>
-                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-                PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        if input[0]=='':
+            search = music_graph.query("""
+                    PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                SELECT ?bas ?album
-                WHERE {
-                ?bas bas:hasGenre bas:"""+input[0]+""" .
-                ?bas bas:primaryinstrument bas:"""+input[1]+""" .
-                ?bas bas:hasAlbum ?album .
-                ?album bas:hasCertification bas:"""+input[2]+"""
-                }""")
+                    SELECT ?bas ?album
+                    WHERE {
+                    ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                    ?bas bas:hasAlbum ?album .
+                    ?album bas:hasCertification bas:"""+input[2]+"""
+                    }""")
+        elif input[1]=='':
+            search = music_graph.query("""
+                    PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
+                    SELECT ?bas ?album
+                    WHERE {
+                    ?bas bas:hasGenre bas:"""+input[0]+""" .
+                    ?bas bas:hasAlbum ?album .
+                    ?album bas:hasCertification bas:"""+input[2]+"""
+                    }""")
+
+        elif input[2]=='':
+            search = music_graph.query("""
+                    PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                    SELECT ?bas
+                    WHERE {
+                    ?bas bas:hasGenre bas:"""+input[0]+""" .
+                    ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                    }""")
+
+        elif input[0]=='' and input[1]=='':
+       
+            search = music_graph.query("""
+                    PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                    SELECT ?bas ?album
+                    WHERE {
+                    ?bas bas:hasAlbum ?album .
+                    ?album bas:hasCertification bas:"""+input[2]+"""
+                    }""")
+
+
+        elif input[0]=='' and input[2]=='':
+            search = music_graph.query("""
+                    PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                    SELECT ?bas
+                    WHERE {
+                    ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                    }""")
+
+        elif input[1]=='' and input[2]=='':
+            search = music_graph.query("""
+                    PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                    SELECT ?bas ?album
+                    WHERE {
+                    ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                    ?bas bas:hasAlbum ?album .
+                    ?album bas:hasCertification bas:"""+input[2]+"""
+                    }""")
+
+        else:
+            search = music_graph.query("""
+                    PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                    SELECT ?bas ?album
+                    WHERE {
+                    ?bas bas:hasGenre bas:"""+input[0]+""" .
+                    ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                    ?bas bas:hasAlbum ?album .
+                    ?album bas:hasCertification bas:"""+input[2]+"""
+                    }""")
         print(len(search))  # TODO Do not remove, otherwise, it will not show all the results
         if len(search)==0:
             to_print.append("Not found!")
 
         # Print results
-        #counter = 0
-        #strx="Person use " + str(instrument_) +": "
-        to_print.append("Person")
+        to_print.append("Artiste")
         to_print.append("&")
         for tra in search:
-            #to_print.append("Person:")
-        #     if counter == 0:
-        #         print("Person use",instrument_, end='')
-        #         to_print.append("Person:")
-        #     elif counter == 1:
-        #         print("Transports : \n    -", end='')
-        #         to_print.append("Transports : \n    -")
-        #     elif 1 == len(search) - counter:
-        #         print("Arriving : ", end='')
-        #         to_print.append("Arriving : ")
-        #     else:
-        #         print('    -', end='')
-        #         to_print.append('    -')
+          
+            counter=0
             for s in range(len(tra)):
+                
                 s_ = str(tra[s]).split('#')
                 if 'http://www.semanticweb.org/music_ontologie' in s_:
                     s_.remove('http://www.semanticweb.org/music_ontologie')
@@ -197,9 +279,19 @@ while True:
                 else:
                     sub = s_[0]
                 print(sub)  # print the element only
-                to_print.append(sub)
-                to_print.append("&")
-        #     counter += 1
+                if input[0]=='':
+                    if counter == 0:
+                        to_print.append("Artiste")
+                        to_print.append(" ")
+                        to_print.append(sub)
+                        to_print.append(", ")
+                    elif counter == 1:
+                        to_print.append("Album")
+                        to_print.append(" ")
+                        to_print.append(sub)
+                        to_print.append("&")
+                    
+                counter += 1
         for idx,itm in enumerate(to_print):
             if itm =="&":
                 to_print[idx]="\n"
@@ -207,7 +299,7 @@ while True:
         to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
 
-        #Search person by genre
+        #Search Artiste by genre
     if event == "Genre":
         event, values = window.read()
         to_print=[]
@@ -246,8 +338,8 @@ while True:
         counter = 0
         for tra in search:
             if counter == 0:
-                print("Person : ", end='')
-                to_print.append("Person : ")
+                print("Artiste : ", end='')
+                to_print.append("Artiste : ")
             elif counter == 1:
                 print("Instrument : \n    -", end='')
                 to_print.append("Instrument : \n    -")
@@ -273,33 +365,7 @@ while True:
         to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
 
-    if event =="Uber statistics for":
-        quart=values.get('_LIST_')
-        quart=str(quart[0])
-        ye = values.get('_LIST1_')
-        ye = str(ye[0])
-        date_print=quart+' '+ye
-        #convert to int
-        ye_transf={'2017':"'17",'2018':"'18",'2019':"'19",'2020':"'20"}
-        for i,j in ye_transf.items():
-            if i==ye:
-                ye=j
-        search_uber=quart+ye
-        dict_data_uber={"Q3'20":78,"Q2'20":55,"Q1'20":103,
-                        "Q4'19":111,"Q3'19":103,"Q2'19":99,"Q1'19":93,
-                        "Q4'18": 91, "Q3'18": 82, "Q2'18": 76, "Q1'18": 70,
-                        "Q4'17": 68, "Q3'17": 62, "Q2'17": 57, "Q1'17": 49}
-        #Source : https://www.statista.com/statistics/833743/us-users-ride-sharing-services/
-        to_print_uber=[]
-        to_print_uber.append('Uber had')
-        for key, value in dict_data_uber.items():
-            if key == search_uber:
-                to_print_uber.append(str(value)+'M Users')
-        to_print_uber.append('in '+date_print)
-        if search_uber == "Q4'20":
-            to_print_uber=['No Data']
-        to_print_uber = " ".join(to_print_uber)
-        window['-TEXT-'].update(to_print_uber)
+    
 
     if event == sg.WIN_CLOSED:
         break

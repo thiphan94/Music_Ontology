@@ -376,6 +376,11 @@
         <NamedIndividual IRI="#White_Album"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#George_Harrison"/>
+        <NamedIndividual IRI="#White_Album"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasGenre"/>
         <NamedIndividual IRI="#George_Harrison"/>
         <NamedIndividual IRI="#Pop"/>
@@ -441,6 +446,16 @@
         <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#Paul_McCartney"/>
+        <NamedIndividual IRI="#White_Album"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#Paul_McCartney"/>
+        <NamedIndividual IRI="#Pop"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#memberof"/>
         <NamedIndividual IRI="#Paul_McCartney"/>
         <NamedIndividual IRI="#The_Beatles"/>
@@ -449,6 +464,11 @@
         <ObjectProperty IRI="#primaryinstrument"/>
         <NamedIndividual IRI="#Paul_McCartney"/>
         <NamedIndividual IRI="#Guitar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#Ringo_Starr"/>
+        <NamedIndividual IRI="#White_Album"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasGenre"/>
