@@ -1,5 +1,4 @@
-# hello_psg.py
-#Transport LIST
+from datetime import datetime
 import rdflib
 from rdflib import Graph, URIRef
 from rdflib.tools import csv2rdf
@@ -8,10 +7,6 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 music_graph = Graph()
 music_graph.parse("Projet_music_rdf_xlm.owl")
 
-#uber_graph= Graph()
-#uber_graph.parse("Uber_Paris.owl")
-quarter=['Q1', 'Q2', 'Q3', 'Q4']
-year=['2017', '2018', '2019', '2020']
 import PySimpleGUI as sg
 
 
@@ -23,7 +18,7 @@ col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine
 
 layout = [
     [sg.Frame(layout=[[sg.Button("Show all Artistes",size=(31,1))],
-    [sg.Text('Gnere', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Classic', 'Rock', 'Hiphop', 'Rap', 'Pop'], enable_events=True, key='combogenre',size=(20, 3))],
+    [sg.Text('Genre', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Classic', 'Rock', 'Hiphop', 'Rap', 'Pop'], enable_events=True, key='combogenre',size=(20, 3))],
     [sg.Text('Instrument', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin','Vocals'], enable_events=True, key='comboinstrument',size=(20, 3))],
     [sg.Text('Album Certification', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Diamond', 'Gold', 'Platinum'], enable_events=True, key='combocertification',size=(20, 3))],
     [sg.Button("Search"),sg.Text('',key='-Search-4')]
@@ -32,8 +27,6 @@ layout = [
 # Create the window
 window = sg.Window("Music Ontology", layout,size=(1080,550),return_keyboard_events=True)
 
-
-sparql = SPARQLWrapper("http://dbpedia.org/sparql")
 
 # Create an event loop
 while True:
@@ -339,12 +332,11 @@ while True:
                 
                 counter += 1
         #Write results to file
-        file = open("result.txt", "w")
-        file.write("Query: search by " + str(input) + "\n" +"Result(s) "+ str(list_result) + "\n")
-        file.close()
-        file1 = open('result.txt', 'r')
-        print(file1.read())
-        file1.close()
+        # datetime object containing current date and time
+        now = datetime.now()
+        with open("result.txt", "a") as text_file:
+            text_file.write(str(now) + ", " + "Query: keywords " + str(input) + "\n" +"Result(s) "+ str(list_result) + "\n" + "\n")
+            text_file.close()
 
         for idx,itm in enumerate(to_print):
             if itm =="&":
