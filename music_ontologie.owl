@@ -378,6 +378,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAlbum"/>
         <NamedIndividual IRI="#George_Harrison"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#George_Harrison"/>
         <NamedIndividual IRI="#White_Album"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -399,6 +404,11 @@
         <ObjectProperty IRI="#primaryinstrument"/>
         <NamedIndividual IRI="#George_Harrison"/>
         <NamedIndividual IRI="#Guitar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#John_Lennon"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAlbum"/>
@@ -448,6 +458,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAlbum"/>
         <NamedIndividual IRI="#Paul_McCartney"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#Paul_McCartney"/>
         <NamedIndividual IRI="#White_Album"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -464,6 +479,11 @@
         <ObjectProperty IRI="#primaryinstrument"/>
         <NamedIndividual IRI="#Paul_McCartney"/>
         <NamedIndividual IRI="#Guitar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#Ringo_Starr"/>
+        <NamedIndividual IRI="#Abbey_Road"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAlbum"/>
@@ -519,6 +539,11 @@
         <ObjectProperty IRI="#hasSong"/>
         <NamedIndividual IRI="#albumtest"/>
         <NamedIndividual IRI="#songtest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCertification"/>
+        <NamedIndividual IRI="#Man_on_the_Moon:_The_End_of_Day"/>
+        <NamedIndividual IRI="#Platinum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasSong"/>

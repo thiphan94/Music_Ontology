@@ -301,6 +301,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#George_Harrison">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
+        <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#Abbey_Road"/>
         <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#White_Album"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Pop"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Rock"/>
@@ -340,6 +341,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Author"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
+        <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#Abbey_Road"/>
         <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#White_Album"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Pop"/>
         <music_ontologie:memberof rdf:resource="http://www.semanticweb.org/music_ontologie#The_Beatles"/>
@@ -399,6 +401,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Paul_McCartney">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Composer"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Interpreter"/>
+        <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#Abbey_Road"/>
         <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#White_Album"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Pop"/>
         <music_ontologie:memberof rdf:resource="http://www.semanticweb.org/music_ontologie#The_Beatles"/>
@@ -434,6 +437,7 @@
     <!-- http://www.semanticweb.org/music_ontologie#Ringo_Starr -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Ringo_Starr">
+        <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#Abbey_Road"/>
         <music_ontologie:hasAlbum rdf:resource="http://www.semanticweb.org/music_ontologie#White_Album"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Pop"/>
         <music_ontologie:hasGenre rdf:resource="http://www.semanticweb.org/music_ontologie#Rock"/>
@@ -526,6 +530,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/music_ontologie#Man_on_the_Moon:_The_End_of_Day">
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Album"/>
+        <music_ontologie:hasCertification rdf:resource="http://www.semanticweb.org/music_ontologie#Platinum"/>
         <music_ontologie:hasSong rdf:resource="http://www.semanticweb.org/music_ontologie#Make_Her_Say"/>
         <music_ontologie:hasSong rdf:resource="http://www.semanticweb.org/music_ontologie#Sky_Might_Fall"/>
     </owl:NamedIndividual>
