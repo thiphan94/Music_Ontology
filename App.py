@@ -51,12 +51,6 @@ while True:
 
                SELECT ?bas
                WHERE {{
-                ?bas rdf:type bas:Musician .
-               }
-               UNION {
-                ?bas rdf:type bas:Singer .
-               }
-               UNION {
                 ?bas rdf:type bas:Composer .
                }
                UNION {
@@ -123,24 +117,10 @@ while True:
             to_print.append("Not found!")
 
         # Print results
-        #counter = 0
         strx="Person use " + str(instrument_) +": "
         to_print.append(strx)
         to_print.append("&")
         for tra in search:
-            #to_print.append("Person:")
-        #     if counter == 0:
-        #         print("Person use",instrument_, end='')
-        #         to_print.append("Person:")
-        #     elif counter == 1:
-        #         print("Transports : \n    -", end='')
-        #         to_print.append("Transports : \n    -")
-        #     elif 1 == len(search) - counter:
-        #         print("Arriving : ", end='')
-        #         to_print.append("Arriving : ")
-        #     else:
-        #         print('    -', end='')
-        #         to_print.append('    -')
             for s in range(len(tra)):
                 s_ = str(tra[s]).split('#')
                 if 'http://www.semanticweb.org/music_ontologie' in s_:
@@ -169,35 +149,21 @@ while True:
         input = [values['combogenre'],values['comboinstrument'],values['combocertification']]
         print("test2",input)
         to_print=[]
-        # print(values.get(0))
-        # instrument=values.get(0)
-        # print(len(instrument))
-        # if len(instrument) == 0:
-        #     instrument = 'Marie'
-        # # Cleaning
-        # instrument_ = instrument.replace(" ", "_")
-        # instrument_list = []
-        # instrument_list[:0] = instrument_
-        # if instrument_list[0] == '_':
-        #     del instrument_list[0]
-        # if instrument_list[-1] == '_':
-        #     del instrument_list[-1]
-        # instrument_ = ''.join(instrument_list)
-        #query for type of instrument and return person who play this instrument
         search = music_graph.query("""
-               PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
-               PREFIX owl: <http://www.w3.org/2002/07/owl#>
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
+                PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-               SELECT ?bas
-               WHERE {
-               ?bas bas:hasGenre bas:"""+input[0]+""" .
-               ?bas bas:primaryinstrument bas:"""+input[1]+""" 
-            
-               }""")
+                SELECT ?bas ?album
+                WHERE {
+                ?bas bas:hasGenre bas:"""+input[0]+""" .
+                ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                ?bas bas:hasAlbum ?album .
+                ?album bas:hasCertification bas:"""+input[2]+"""
+                }""")
 
         print(len(search))  # TODO Do not remove, otherwise, it will not show all the results
         if len(search)==0:

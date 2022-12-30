@@ -396,6 +396,16 @@
         <NamedIndividual IRI="#Guitar"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAlbum"/>
+        <NamedIndividual IRI="#John_Lennon"/>
+        <NamedIndividual IRI="#White_Album"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#John_Lennon"/>
+        <NamedIndividual IRI="#Pop"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#memberof"/>
         <NamedIndividual IRI="#John_Lennon"/>
         <NamedIndividual IRI="#The_Beatles"/>
