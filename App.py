@@ -12,16 +12,17 @@ import PySimpleGUI as sg
 
 sg.theme('DarkGrey1')   # Add a touch of color
 
-col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine to music ontology :\n   - Show all artistes available\n   - Search informations with query.",key='-TEXT-',size=(500,30),font=("Helvetica", 12), text_color='black',)]],
+col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine to music ontology :\n   - Show all artistes available\n   - Search informations with query.",key='-TEXT-',size=(400,30),font=("Helvetica", 12), text_color='black',)]],
         title='Informations:')]]
 
 
 layout = [
     [sg.Frame(layout=[[sg.Button("Show all Artistes",size=(31,1))],
-    [sg.Text('Genre', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Classic', 'Rock', 'Hiphop', 'Rap', 'Pop'], enable_events=True, key='combogenre',size=(20, 3))],
+    [sg.Text('Genre', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Classic', 'Rock', 'Hiphop', 'Rap', 'Pop','Blues','Dixieland','House','Jazz','R&B','Soul','Traditional pop'], enable_events=True, key='combogenre',size=(20, 3))],
     [sg.Text('Instrument', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin','Vocals'], enable_events=True, key='comboinstrument',size=(20, 3))],
-    [sg.Text('Album Certification', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Diamond', 'Gold', 'Platinum'], enable_events=True, key='combocertification',size=(20, 3))],
-    [sg.Button("Search"),sg.Text('',key='-Search-4')]
+    [sg.Text('Certification', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Diamond', 'Gold', 'Platinum'], enable_events=True, key='combocertification',size=(20, 3))],
+    [sg.Button("Search"),sg.Text('',key='-Search-4')],
+    [sg.Button("Exit")]
     ], title='Interface:'), sg.Column(col)],
 ]
 # Create the window
@@ -74,68 +75,7 @@ while True:
         window['-TEXT-'].update(liste_t)
 
 
-    #Search Artiste by instrument
-    if event == "Instrument":
-        event, values = window.read()
-        instrument = values['comboinstrument']
-        print(instrument)
-        to_print=[]
-        # print(values.get(0))
-        # instrument=values.get(0)
-        # print(len(instrument))
-        # if len(instrument) == 0:
-        #     instrument = 'Marie'
-        # # Cleaning
-        instrument_ = instrument.replace(" ", "_")
-        instrument_list = []
-        instrument_list[:0] = instrument_
-        if instrument_list[0] == '_':
-            del instrument_list[0]
-        if instrument_list[-1] == '_':
-            del instrument_list[-1]
-        instrument_ = ''.join(instrument_list)
-        # query for type of instrument and return Artiste who play this instrument
-        search = music_graph.query("""
-               PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
-               PREFIX owl: <http://www.w3.org/2002/07/owl#>
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-               SELECT ?bas
-               WHERE {{
-               ?bas bas:primaryinstrument bas:"""+instrument_+""" .
-               }}""")
-
-        print(len(search))  # TODO Do not remove, otherwise, it will not show all the results
-        if len(search)==0:
-            to_print.append("Not found!")
-
-        # Print results
-        strx="Artiste use " + str(instrument_) +": "
-        to_print.append(strx)
-        to_print.append("&")
-        for tra in search:
-            for s in range(len(tra)):
-                s_ = str(tra[s]).split('#')
-                if 'http://www.semanticweb.org/music_ontologie' in s_:
-                    s_.remove('http://www.semanticweb.org/music_ontologie')
-                if not s_:
-                    sub = 'music_ontologie'
-                else:
-                    sub = s_[0]
-                print(sub)  # print the element only
-                to_print.append(sub)
-                to_print.append("&")
-        #     counter += 1
-        for idx,itm in enumerate(to_print):
-            if itm =="&":
-                to_print[idx]="\n"
-
-        to_print = " ".join(to_print)
-        window['-TEXT-'].update(to_print)
-
+    
 
     
 #Search Artiste by combo
@@ -172,7 +112,7 @@ while True:
 
                     SELECT DISTINCT ?bas
                     WHERE {
-                    ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                    ?bas bas:hasInstrument bas:"""+input[1]+""" .
                     }""")
 
             else:
@@ -186,7 +126,7 @@ while True:
 
                         SELECT DISTINCT ?bas ?album
                         WHERE {
-                        ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                        ?bas bas:hasInstrument bas:"""+input[1]+""" .
                         ?bas bas:hasAlbum ?album .
                         ?album bas:hasCertification bas:"""+input[2]+"""
                         }""")
@@ -234,7 +174,7 @@ while True:
                     SELECT DISTINCT ?bas 
                     WHERE {
                     ?bas bas:hasGenre bas:"""+input[0]+""" .
-                    ?bas bas:primaryinstrument bas:"""+input[1]+""" 
+                    ?bas bas:hasInstrument bas:"""+input[1]+""" 
                     }""")
     
         else:
@@ -249,7 +189,7 @@ while True:
                     SELECT DISTINCT ?bas ?album
                     WHERE {
                     ?bas bas:hasGenre bas:"""+input[0]+""" .
-                    ?bas bas:primaryinstrument bas:"""+input[1]+""" .
+                    ?bas bas:hasInstrument bas:"""+input[1]+""" .
                     ?bas bas:hasAlbum ?album .
                     ?album bas:hasCertification bas:"""+input[2]+"""
                     }""")
@@ -345,74 +285,8 @@ while True:
         to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
         
-        #Search Artiste by genre
-    if event == "Genre":
-        event, values = window.read()
-        to_print=[]
-        print(values.get(0))
-        genre=values.get(0)
-        if len(genre) == 0:
-            genre = 'Marie'
-        # Cleaning
-        genre_ = genre.replace(" ", "_")
-        genre_list = []
-        genre_list[:0] = genre_
-        if genre_list[0] == '_':
-            del genre_list[0]
-        if genre_list[-1] == '_':
-            del genre_list[-1]
-        genre_ = ''.join(genre_list)
-        # query for user's name and return transports, depart, arrivee
-        search = music_graph.query("""
-               PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
-               PREFIX owl: <http://www.w3.org/2002/07/owl#>
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-               PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-               SELECT ?bas
-               WHERE {{
-               ?bas bas:hasGenre bas:"""+genre_+""" .
-               }}""")
-
-        print(len(search))  # TODO Do not remove, otherwise, it will not show all the results
-        if len(search)==0:
-            to_print.append("User not found")
-
-        # "Clean" the results to print only transport's name
-        counter = 0
-        for tra in search:
-            if counter == 0:
-                print("Artiste : ", end='')
-                to_print.append("Artiste : ")
-            elif counter == 1:
-                print("Instrument : \n    -", end='')
-                to_print.append("Instrument : \n    -")
-            else:
-                print('    -', end='')
-                to_print.append('    -')
-            for s in range(len(tra)):
-                s_ = str(tra[s]).split('#')
-                if 'http://www.semanticweb.org/music_ontologie' in s_:
-                    s_.remove('http://www.semanticweb.org/music_ontologie')
-                if not s_:
-                    sub = 'music_ontologie'
-                else:
-                    sub = s_[0]
-                print(sub)  # print the element only
-                to_print.append(sub)
-                to_print.append("&")
-            counter += 1
-        for idx,itm in enumerate(to_print):
-            if itm =="&":
-                to_print[idx]="\n"
-
-        to_print = " ".join(to_print)
-        window['-TEXT-'].update(to_print)
-
     
-
-    if event == sg.WIN_CLOSED:
+    # If user closed window with X or if user clicked "Exit" button then exit
+    if event == sg.WIN_CLOSED or event == 'Exit':
         break
 window.close()

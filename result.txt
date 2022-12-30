@@ -4,3 +4,21 @@ Result(s) ['Ludwig_van_Beethoven']
 2022-12-30 14:08:15.068098, Query: keywords ['Pop', 'Guitar', '']
 Result(s) ['George_Harrison', 'John_Lennon', 'Paul_McCartney']
 
+2022-12-30 15:15:50.522691, Query: keywords ['Pop', '', '']
+Result(s) ['Adele', 'Charlie_Puth', 'George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Ringo_Starr', 'Stromae', 'The_Beatles']
+
+2022-12-30 15:20:04.532664, Query: keywords ['', 'Drums', 'Platinum']
+Result(s) ['Ringo_Starr', 'Abbey_Road', 'Ringo_Starr', 'White_Album']
+
+2022-12-30 15:20:11.853884, Query: keywords ['Rock', 'Drums', 'Platinum']
+Result(s) ['Ringo_Starr', 'Abbey_Road', 'Ringo_Starr', 'White_Album']
+
+2022-12-30 15:20:15.927457, Query: keywords ['Rock', 'Drums', 'Platinum']
+Result(s) ['Ringo_Starr', 'Abbey_Road', 'Ringo_Starr', 'White_Album']
+
+2022-12-30 15:20:23.805279, Query: keywords ['Classic', 'Piano', 'Platinum']
+Result(s) []
+
+2022-12-30 15:20:45.347543, Query: keywords ['Pop', 'Guitar', 'Platinum']
+Result(s) ['George_Harrison', 'Abbey_Road', 'George_Harrison', 'White_Album', 'John_Lennon', 'Abbey_Road', 'John_Lennon', 'White_Album', 'Paul_McCartney', 'Abbey_Road', 'Paul_McCartney', 'White_Album']
+
