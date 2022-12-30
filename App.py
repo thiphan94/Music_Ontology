@@ -16,14 +16,14 @@ col = [[sg.Frame(layout=[[sg.Multiline("This application will be a search engine
         title='Informations:')]]
 
 
-layout = [
+layout = [[sg.Button("Exit")],
     [sg.Frame(layout=[[sg.Button("Show all Artistes",size=(31,1))],
     [sg.Text('Genre', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Classic', 'Rock', 'Hiphop', 'Rap', 'Pop','Blues','Dixieland','House','Jazz','R&B','Soul','Traditional pop'], enable_events=True, key='combogenre',size=(20, 3))],
     [sg.Text('Instrument', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Guitar', 'Piano', 'Drums', 'Violin','Vocals'], enable_events=True, key='comboinstrument',size=(20, 3))],
     [sg.Text('Certification', size=(15, 1), auto_size_text=False, justification='right'), sg.InputCombo(['Diamond', 'Gold', 'Platinum'], enable_events=True, key='combocertification',size=(20, 3))],
-    [sg.Button("Search"),sg.Text('',key='-Search-4')],
-    [sg.Button("Exit")]
-    ], title='Interface:'), sg.Column(col)],
+    [sg.Button("Search"),sg.Text('',key='-Search-4')]
+    #[sg.Button("Reset")]
+    ], title='Interface:'), sg.Column(col)]
 ]
 # Create the window
 window = sg.Window("Music Ontology", layout,size=(1080,550),return_keyboard_events=True)
@@ -38,7 +38,7 @@ while True:
     #Search all Artistes
     if event == "Show all Artistes" :
         # If new type of transport, add one Union with bas:NewTransport
-        all_transports = music_graph.query("""
+        all_music = music_graph.query("""
                PREFIX bas: <http://www.semanticweb.org/music_ontologie#>
                PREFIX owl: <http://www.w3.org/2002/07/owl#>
                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -58,11 +58,11 @@ while True:
                }}
 
                """)
-        # "Clean" the results to print only transport's name
+       
         liste_t=[]
-        for transport in all_transports:
-            for s in range(len(transport)):
-                s_ = str(transport[s]).split('#')
+        for elt in all_music:
+            for s in range(len(elt)):
+                s_ = str(elt[s]).split('#')
                 if 'http://www.semanticweb.org/music_ontologie' in s_:
                     s_.remove('http://www.semanticweb.org/music_ontologie')
                 if not s_:
@@ -81,10 +81,9 @@ while True:
 #Search Artiste by combo
     if event == "Search":
         event, values = window.read()
-        
-        print("test",values)
+   
         input = [values['combogenre'],values['comboinstrument'],values['combocertification']]
-        print("test2",input)
+      
         to_print=[]
         if input[0]=='':
             if input[1]=='':
@@ -96,10 +95,11 @@ while True:
                     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-                    SELECT DISTINCT ?album
+                    SELECT DISTINCT ?album ?song
                     WHERE {
                     ?bas bas:hasAlbum ?album .
                     ?album bas:hasCertification bas:"""+input[2]+"""
+                    OPTIONAL {?album bas:hasSong ?song .}
                     }""")
             elif input[2]=='':
                 search = music_graph.query("""
@@ -193,7 +193,8 @@ while True:
                     ?bas bas:hasAlbum ?album .
                     ?album bas:hasCertification bas:"""+input[2]+"""
                     }""")
-        print(len(search))  # TODO Do not remove, otherwise, it will not show all the results
+        print(len(search))  
+        
         
         if len(search)==0:
             to_print.append("Not found!")
@@ -216,10 +217,16 @@ while True:
                 #print only artiste and album
                 if input[0]=='':
                     if input[1] == '':   
-                        to_print.append("Album:")
-                        to_print.append(" ")
-                        to_print.append(sub)
-                        to_print.append("&")
+                        if counter == 0:
+                            to_print.append("Album:")
+                            to_print.append(" ")
+                            to_print.append(sub)
+                            to_print.append(", ")
+                        elif counter == 1:
+                            to_print.append("Song:")
+                            to_print.append(" ")
+                            to_print.append(sub)
+                            to_print.append("&")
                     elif input[2] == '':
                         to_print.append("Artiste:")
                         to_print.append(" ")
@@ -285,7 +292,12 @@ while True:
         to_print = " ".join(to_print)
         window['-TEXT-'].update(to_print)
         
-    
+     
+    # #reset search
+    # if event == "Reset":
+    #     event, values = window.read()
+    #     values == ''
+    #     print("in reset", values)
     # If user closed window with X or if user clicked "Exit" button then exit
     if event == sg.WIN_CLOSED or event == 'Exit':
         break

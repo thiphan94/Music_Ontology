@@ -22,3 +22,93 @@ Result(s) []
 2022-12-30 15:20:45.347543, Query: keywords ['Pop', 'Guitar', 'Platinum']
 Result(s) ['George_Harrison', 'Abbey_Road', 'George_Harrison', 'White_Album', 'John_Lennon', 'Abbey_Road', 'John_Lennon', 'White_Album', 'Paul_McCartney', 'Abbey_Road', 'Paul_McCartney', 'White_Album']
 
+2022-12-30 15:44:47.074246, Query: keywords ['Rock', 'Piano', '']
+Result(s) []
+
+2022-12-30 15:45:01.023346, Query: keywords ['Pop', 'Piano', '']
+Result(s) []
+
+2022-12-30 15:45:04.798177, Query: keywords ['Pop', 'Guitar', '']
+Result(s) ['George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Stromae']
+
+2022-12-30 15:45:12.072031, Query: keywords ['Pop', 'Guitar', '']
+Result(s) ['George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Stromae']
+
+2022-12-30 15:45:14.263752, Query: keywords ['Pop', 'Guitar', '']
+Result(s) ['George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Stromae']
+
+2022-12-30 15:47:50.358334, Query: keywords ['Pop', 'Guitar', '']
+Result(s) ['George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Stromae']
+
+2022-12-30 15:47:59.489795, Query: keywords ['Pop', 'Guitar', '']
+Result(s) ['George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Stromae']
+
+2022-12-30 15:50:54.471433, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 15:51:05.073608, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 15:54:21.062208, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 15:55:10.436251, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 16:18:01.439618, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:18:08.175145, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:19:13.451318, Query: keywords ['Classic', 'Guitar', '']
+Result(s) []
+
+2022-12-30 16:19:17.582676, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:19:38.821741, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:21:36.090961, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:22:22.990695, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:22:31.632483, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:23:03.426284, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:23:54.186877, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 16:23:59.268564, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 16:24:01.136538, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 16:25:04.014311, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 16:26:28.358775, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 16:27:22.821736, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 16:31:39.920858, Query: keywords ['', '', 'Platinum']
+Result(s) ['Abbey_Road', 'White_Album', '30', 'Man_on_the_Moon:_The_End_of_Day']
+
+2022-12-30 16:40:23.011609, Query: keywords ['', '', 'Platinum']
+Result(s) ['Abbey_Road', 'None', 'White_Album', 'None', '30', 'None', 'Man_on_the_Moon:_The_End_of_Day', 'Make_Her_Say', 'Man_on_the_Moon:_The_End_of_Day', 'Sky_Might_Fall']
+
+2022-12-30 17:10:51.738584, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 17:14:08.271280, Query: keywords ['', '', 'Platinum']
+Result(s) ['Abbey_Road', 'None', 'White_Album', 'None', '30', 'None', 'Man_on_the_Moon:_The_End_of_Day', 'Make_Her_Say', 'Man_on_the_Moon:_The_End_of_Day', 'Sky_Might_Fall']
+

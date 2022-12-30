@@ -766,6 +766,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/music_ontologie#Album"/>
         <music_ontologie:beAlbumof rdf:resource="http://www.semanticweb.org/music_ontologie#The_Beatles"/>
         <music_ontologie:hasCertification rdf:resource="http://www.semanticweb.org/music_ontologie#Platinum"/>
+        <music_ontologie:hasSong rdf:resource="http://www.semanticweb.org/music_ontologie#Back_In_The_Ussr"/>
     </owl:NamedIndividual>
     
 

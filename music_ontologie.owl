@@ -954,6 +954,11 @@
         <NamedIndividual IRI="#Platinum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSong"/>
+        <NamedIndividual IRI="#White_Album"/>
+        <NamedIndividual IRI="#Back_In_The_Ussr"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#beAlbumof"/>
         <NamedIndividual IRI="#Whitney_Houston"/>
         <NamedIndividual IRI="#John_Lennon"/>
