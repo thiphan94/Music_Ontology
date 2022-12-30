@@ -4,6 +4,12 @@ Result(s) ['Ludwig_van_Beethoven']
 2022-12-30 14:08:15.068098, Query: keywords ['Pop', 'Guitar', '']
 Result(s) ['George_Harrison', 'John_Lennon', 'Paul_McCartney']
 
+2022-12-30 15:21:46.321298, Query: keywords ['Rock', 'Vocals', '']
+Result(s) []
+
+2022-12-30 15:21:57.216893, Query: keywords ['Rock', 'Guitar', '']
+Result(s) ['George_Harrison']
+
 2022-12-30 15:15:50.522691, Query: keywords ['Pop', '', '']
 Result(s) ['Adele', 'Charlie_Puth', 'George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Ringo_Starr', 'Stromae', 'The_Beatles']
 
@@ -111,4 +117,250 @@ Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
 
 2022-12-30 17:14:08.271280, Query: keywords ['', '', 'Platinum']
 Result(s) ['Abbey_Road', 'None', 'White_Album', 'None', '30', 'None', 'Man_on_the_Moon:_The_End_of_Day', 'Make_Her_Say', 'Man_on_the_Moon:_The_End_of_Day', 'Sky_Might_Fall']
+
+2022-12-30 18:29:22.125366, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 18:29:37.191782, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 18:31:24.594784, Query: keywords ['Classic', 'Drums', '']
+Result(s) []
+
+2022-12-30 18:35:36.777127, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 18:35:55.754580, Query: keywords ['All', '', '']
+Result(s) []
+
+2022-12-30 18:37:10.276585, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 18:37:44.479968, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 18:37:52.051002, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 18:38:00.334312, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 18:38:05.039546, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 18:40:33.501078, Query: keywords ['', '', '']
+Result(s) []
+
+2022-12-30 18:51:23.683222, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 18:51:28.447357, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 18:51:39.170929, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 18:52:00.254563, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 18:53:26.803310, Query: keywords ['Pop', '', '']
+Result(s) ['Adele', 'Charlie_Puth', 'George_Harrison', 'John_Lennon', 'Paul_McCartney', 'Ringo_Starr', 'Stromae', 'The_Beatles']
+
+2022-12-30 18:53:33.552539, Query: keywords ['Blues', '', '']
+Result(s) ['Hozier']
+
+2022-12-30 18:53:37.201099, Query: keywords ['Dixieland', '', '']
+Result(s) ['Louis_Armstrong']
+
+2022-12-30 18:53:56.050050, Query: keywords ['Dixieland', '', '']
+Result(s) ['Louis_Armstrong']
+
+2022-12-30 18:54:04.098889, Query: keywords ['Soul', '', '']
+Result(s) ['Adele', 'Hozier']
+
+2022-12-30 18:54:23.222337, Query: keywords ['Soul', '', 'Gold']
+Result(s) []
+
+2022-12-30 18:54:28.276886, Query: keywords ['Soul', '', 'Diamond']
+Result(s) []
+
+2022-12-30 18:54:33.383523, Query: keywords ['Soul', '', 'Platinum']
+Result(s) ['Adele', '30']
+
+2022-12-30 18:55:39.879948, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 18:56:13.942726, Query: keywords ['Soul', '', '']
+Result(s) ['Adele', 'Hozier']
+
+2022-12-30 18:56:23.410709, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 18:58:05.992126, Query: keywords ['', '', 'Gold']
+Result(s) ['SOS', 'None']
+
+2022-12-30 18:58:35.985928, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:05:53.171841, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 19:05:56.927000, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:06:02.234358, Query: keywords ['', '', 'Gold']
+Result(s) ['SOS', 'None']
+
+2022-12-30 19:07:28.108968, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 19:07:32.636068, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:07:37.228523, Query: keywords ['', 'Piano', '']
+Result(s) ['Florence_and_the_Machine', 'Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 19:07:41.296031, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:07:45.216070, Query: keywords ['', '', 'Gold']
+Result(s) ['SOS', 'None']
+
+2022-12-30 19:09:15.515043, Query: keywords ['', 'Guitar', 'Gold']
+Result(s) []
+
+2022-12-30 19:09:20.458373, Query: keywords ['', 'Guitar', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:09:30.408438, Query: keywords ['Rock', 'Guitar', 'Diamond']
+Result(s) []
+
+2022-12-30 19:31:11.371626, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 19:31:16.227184, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:32:13.007217, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 19:32:19.333976, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:32:23.051552, Query: keywords ['', 'Guitar', '']
+Result(s) ['Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Paul_McCartney', 'Stromae']
+
+2022-12-30 19:34:47.190238, Query: keywords ['', '', 'Gold']
+Result(s) ['SOS', 'None']
+
+2022-12-30 19:35:45.625797, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:39:25.078551, Query: keywords ['', '', 'Diamond']
+Result(s) ['Racine_Carre', 'None']
+
+2022-12-30 19:39:33.479186, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:39:40.758344, Query: keywords ['Classic', '', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 19:39:45.198770, Query: keywords ['Classic', 'Piano', '']
+Result(s) ['Ludwig_van_Beethoven', 'Wolfgang_Amadeus_Mozart']
+
+2022-12-30 19:40:01.532357, Query: keywords ['', 'Guitar', '']
+Result(s) ['Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Paul_McCartney', 'Stromae']
+
+2022-12-30 19:40:11.546322, Query: keywords ['', 'Guitar', 'Gold']
+Result(s) []
+
+2022-12-30 19:40:15.830465, Query: keywords ['', 'Guitar', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:40:24.018795, Query: keywords ['', 'Guitar', 'Platinum']
+Result(s) ['George_Harrison', 'Abbey_Road', 'John_Lennon', 'Abbey_Road', 'Paul_McCartney', 'Abbey_Road', 'George_Harrison', 'White_Album', 'John_Lennon', 'White_Album', 'Paul_McCartney', 'White_Album']
+
+2022-12-30 19:41:52.441161, Query: keywords ['Rock', '', '']
+Result(s) ['George_Harrison', 'Hozier', 'Ringo_Starr', 'The_Beatles']
+
+2022-12-30 19:42:01.663196, Query: keywords ['Rock', 'Vocals', '']
+Result(s) ['Hozier']
+
+2022-12-30 19:42:08.176265, Query: keywords ['Rock', 'Vocals', 'Gold']
+Result(s) []
+
+2022-12-30 19:42:12.938104, Query: keywords ['', 'Vocals', 'Gold']
+Result(s) ['SZA', 'SOS']
+
+2022-12-30 19:42:22.827334, Query: keywords ['', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:42:24.197896, Query: keywords ['', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:42:31.642777, Query: keywords ['', 'Vocals', 'Platinum']
+Result(s) []
+
+2022-12-30 19:42:36.739912, Query: keywords ['', 'Vocals', 'Platinum']
+Result(s) []
+
+2022-12-30 19:42:50.192564, Query: keywords ['', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:44:32.694706, Query: keywords ['', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:45:13.835561, Query: keywords ['Rock', '', 'Diamond']
+Result(s) []
+
+2022-12-30 19:45:20.453100, Query: keywords ['Pop', '', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:45:35.819956, Query: keywords ['Pop', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:46:44.423634, Query: keywords ['Soul', '', '']
+Result(s) ['Adele', 'Hozier']
+
+2022-12-30 19:46:52.543571, Query: keywords ['Soul', '', 'Diamond']
+Result(s) []
+
+2022-12-30 19:46:59.983792, Query: keywords ['', '', 'Diamond']
+Result(s) ['Racine_Carre', 'None']
+
+2022-12-30 19:47:08.173410, Query: keywords ['', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:47:37.268127, Query: keywords ['Hiphop', 'Vocals', 'Diamond']
+Result(s) []
+
+2022-12-30 19:47:40.490837, Query: keywords ['Rap', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:47:59.962138, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
+
+2022-12-30 19:48:13.472717, Query: keywords ['Hiphop', '', '']
+Result(s) ['Kid_Cudi']
+
+2022-12-30 19:48:36.099835, Query: keywords ['Hiphop', '', '']
+Result(s) ['Kid_Cudi']
+
+2022-12-30 19:48:45.965056, Query: keywords ['Rap', '', '']
+Result(s) ['Stromae']
+
+2022-12-30 19:49:00.727653, Query: keywords ['Rap', 'Vocals', '']
+Result(s) ['Stromae']
+
+2022-12-30 19:49:11.559182, Query: keywords ['Rap', 'Vocals', 'Gold']
+Result(s) []
+
+2022-12-30 19:49:20.122963, Query: keywords ['Rap', 'Vocals', 'Diamond']
+Result(s) ['Stromae', 'Racine_Carre']
+
+2022-12-30 19:49:43.654417, Query: keywords ['', '', 'Diamond']
+Result(s) ['Racine_Carre', 'None']
+
+2022-12-30 19:49:52.590630, Query: keywords ['', '', '']
+Result(s) ['Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'Jerry_Herman', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Ludwig_van_Beethoven', 'Paul_McCartney', 'SZA', 'Stromae', 'Wolfgang_Amadeus_Mozart', 'Adele', 'Florence_and_the_Machine', 'Hozier', 'John_Lennon', 'Otis_Blackwell', 'Stromae', 'Adele', 'Charlie_Puth', 'Florence_and_the_Machine', 'George_Harrison', 'Hozier', 'John_Lennon', 'Kid_Cudi', 'Louis_Armstrong', 'Paul_McCartney', 'SZA', 'Stromae', 'Whitney_Houston']
 
